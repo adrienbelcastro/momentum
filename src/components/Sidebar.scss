@@ -1,0 +1,73 @@
+@import "../styles/partials/variables.scss";
+@import "../styles/partials/mixins.scss";
+/* Position and sizing of burger button */
+.sidebar {
+  &__burger-btn {
+    position: fixed;
+    width: 1.3rem;
+    height: 1rem;
+    left: 36px;
+    top: 36px;
+
+    &:hover {
+      background-color: $gold;
+    }
+  }
+  &__burger-bars {
+    background: $alabaster;
+
+    &:hover {
+      background: $gold;
+    }
+  }
+  &__cross-btn {
+    height: 24px;
+    width: 24px;
+  }
+  &__cross {
+    background: #bdc3c7;
+  }
+  &__menu {
+    // background: #373a47;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+  }
+  &__morph-shape {
+    fill: #373a47;
+  }
+  &__item-list {
+    color: #b8b7ad;
+    padding: 0.8em;
+  }
+  &__item {
+    display: inline-block;
+    margin: 1rem 0;
+    text-decoration: none;
+
+    color: $alabaster;
+  }
+  &__signup {
+    border: none;
+    background-color: inherit;
+    color: gold;
+  }
+  &__search {
+    height: 40px;
+    width: 14rem;
+    border: solid $mercury;
+    border-radius: 4px;
+    background-color: $alabaster;
+  }
+  &__overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
+/*
+  Sidebar wrapper styles
+  Note: Package doesn't allow this class to converted into SASS naming scheme
+  */
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
