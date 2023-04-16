@@ -1,10 +1,75 @@
+@import "../styles/partials/mixins.scss";
+@import "../styles/partials/variables.scss";
+
 .header {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+
+  &__desktop-navbar,
+  &__desktop-search,
+  &__desktop-signup {
+    display: none;
+  }
 
   &__profile {
     width: 36px;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     margin-right: 1rem;
+  }
+
+  @include desktop {
+    justify-content: space-between;
+    margin: 2rem;
+
+    &__desktop-navbar {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &__desktop-logo {
+      width: 100px;
+      height: 100px;
+    }
+
+    &__desktop-recipes,
+    &__desktop-ingredients,
+    &__desktop-countries {
+      color: white;
+      text-decoration: none;
+    }
+
+    &__nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      margin-top: 1.5rem;
+    }
+
+    &__desktop-search {
+      display: inline-block;
+      height: 40px;
+      width: 14rem;
+      border: solid $mercury;
+      border-radius: 4px;
+      background-color: $alabaster;
+    }
+
+    &__profile {
+      margin-top: 0rem;
+      margin-right: 0rem;
+    }
+
+    &__desktop-signup {
+      display: inline-block;
+      border: none;
+      color: $gold;
+    }
+
+    &__sidebar {
+      display: none;
+    }
   }
 }
