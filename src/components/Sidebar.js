@@ -28,9 +28,12 @@ export default (Sidebar) => {
       <input
         className="sidebar__search"
         type="search"
-        placeholder="search 🔎"
+        placeholder="search"
       ></input>
-      <button className="sidebar__signup">Sign Up</button>
+      <div className="sidebar__randomizer-container">
+        <button className="sidebar__signup">Sign Up</button>
+        <button className="sidebar__randomizer">Random Recipe</button>
+      </div>
     </Menu>
   );
 };

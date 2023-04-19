@@ -47,6 +47,13 @@
     color: $alabaster;
   }
   &__signup {
+    padding-right: 1rem;
+    border: none;
+    background-color: inherit;
+    color: gold;
+  }
+
+  &__randomizer {
     border: none;
     background-color: inherit;
     color: gold;

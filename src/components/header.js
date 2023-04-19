@@ -22,6 +22,9 @@ const Header = () => {
           <a href="/" className="header__desktop-countries">
             Countries
           </a>
+          <a href="/" className="header__desktop-countries">
+            Random Recipe
+          </a>
         </ul>
         <ul className="header__nav">
           <input
