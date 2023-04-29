@@ -1,6 +1,6 @@
 import Sidebar from "./Sidebar";
 import { AvatarGenerator } from "random-avatar-generator";
-import logo from "../assets/images/loading-video.png";
+import logo from "../../assets/images/loading-video.png";
 import { AiOutlineSearch } from "react-icons/ai";
 import "./header.scss";
 
