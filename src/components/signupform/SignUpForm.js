@@ -1,51 +1,73 @@
+import "./SignUpForm.scss";
+import { Link } from "react-router-dom";
+
 const SignUpForm = () => {
   return (
-    <div className="details">
-      <h2 className="details__subheader">Warehouse Details</h2>
-      <form>
-        <label className="details__container">
-          <h6 className="details__form-title">Warehouse Name</h6>
-          <input
-            className="details__input"
-            type="text"
-            name="Warehouse Name"
-            placeholder="Washington"
-          />
-        </label>
-      </form>
-      <form>
-        <label className="details__container">
-          <h6 className="details__form-title">Street Address</h6>
-          <input
-            className="details__input"
-            type="text"
-            name="Street Address"
-            placeholder="33 Pearl Street SW"
-          />
-        </label>
-      </form>
-      <form>
-        <label className="details__container">
-          <h6 className="details__form-title">City</h6>
-          <input
-            className="details__input"
-            type="text"
-            name="City"
-            placeholder="Washington"
-          />
-        </label>
-      </form>
-      <form>
-        <label className="details__container">
-          <h6 className="details__form-title">Country</h6>
-          <input
-            className="details__input"
-            type="text"
-            name="Country"
-            placeholder="USA"
-          />
-        </label>
-      </form>
+    <div className="form">
+      <h2 className="form__subheader">Create An Account</h2>
+      <h4 className="form__tagline">No More Boxed Mac And Cheese</h4>
+      <div>
+        <div>
+          <form>
+            <label className="form__container">
+              <input
+                className="form__input"
+                type="text"
+                name="Username"
+                placeholder="Username"
+              />
+            </label>
+
+            <label className="form__container">
+              <input
+                className="form__input"
+                type="text"
+                name="Name"
+                placeholder="Name"
+              />
+            </label>
+
+            <label className="form__container">
+              <input
+                className="form__input"
+                type="text"
+                name="Email"
+                placeholder="Email"
+              />
+            </label>
+
+            <label className="form__container">
+              <input
+                className="form__input"
+                type="text"
+                name="Password"
+                placeholder="Password"
+              />
+            </label>
+            <label className="form__container">
+              <input
+                className="form__input"
+                type="text"
+                name="Password"
+                placeholder="Confirm Password"
+              />
+            </label>
+            <div className="form__btn-container">
+              <button className="form__btn">
+                <h4 className="form__btn-title">Create Account</h4>
+              </button>
+            </div>
+            <div className="form__login-container">
+              <p className="form__login-prompt">
+                Already Have An Account?{" "}
+                <Link className="form__login-link" to="/login">
+                  Log In{" "}
+                </Link>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
