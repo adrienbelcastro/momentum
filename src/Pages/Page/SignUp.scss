@@ -1,0 +1,25 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.signup {
+  @include tablet {
+    background-image: url(../../assets/images/signup-background.jpg);
+    background-size: 768px 800px;
+    background-repeat: no-repeat;
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @include desktop {
+    background-image: url(../../assets/images/signup-background.jpg);
+    background-size: 1280px 1000px;
+    background-repeat: no-repeat;
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
