@@ -1,20 +1,22 @@
 import CategoryCard from "./CategoryCard";
+import "./CategoryGrid.scss";
 
 function CategoryGrid(details) {
   const categoryList = details.categories.categories;
-  console.log(categoryList);
+
   return (
     <section className="category-list">
-      <h4 className="category-list__title">Categories</h4>
-      {categoryList.map((categoryList) => (
-        <CategoryCard
-          key={categoryList.idCategory}
-          title={categoryList.strCategory}
-          thumbnail={categoryList.strCategoryThumb}
-          description={categoryList.strCategorydescription}
-          id={categoryList.idCategory}
-        />
-      ))}
+      <h1 className="category-list__title">DINE BY CATEGORIES</h1>
+      <div className="category-list__container">
+        {categoryList.map((categoryList) => (
+          <CategoryCard
+            key={categoryList.idCategory}
+            title={categoryList.strCategory}
+            thumbnail={categoryList.strCategoryThumb}
+            id={categoryList.idCategory}
+          />
+        ))}
+      </div>
     </section>
   );
 }
