@@ -1,0 +1,30 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.hero {
+  &__video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+  &__container {
+  }
+
+  &__video-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    left: 0;
+    top: 4.1rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__title {
+    position: absolute;
+    top: 12rem;
+    left: 3rem;
+
+    font-size: 4rem;
+    background: none;
+  }
+}
