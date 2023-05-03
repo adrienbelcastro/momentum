@@ -3,23 +3,44 @@
 
 .category-list {
   margin: 1rem;
-  // @include desktop {
-  //   margin: 2rem;
-  // }
+  @include tablet {
+    margin: 2rem;
+  }
+  @include desktop {
+    margin: 2rem 5.5rem;
+  }
   &__container {
+    width: 300px;
+
     display: flex;
-    flex-wrap: wrap;
     gap: 2rem;
-    justify-content: center;
 
     padding-top: 1rem;
+
+    overflow: scroll;
+
+    @include tablet {
+      width: 700px;
+      margin-left: 1rem;
+    }
+
+    @include desktop {
+      width: 1100px;
+    }
   }
 
   &__title {
-    width: 70%;
+    width: 50%;
     font-size: 14px;
-    margin-left: 1rem;
+
     border-bottom: 1px solid $gold;
     padding-bottom: 0.2rem;
+
+    @include tablet {
+      @include tablet-desktop-title;
+    }
+    @include desktop {
+      @include tablet-desktop-title;
+    }
   }
 }
