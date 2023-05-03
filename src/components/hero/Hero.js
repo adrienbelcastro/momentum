@@ -11,6 +11,9 @@ const Hero = () => {
           </video>
           <div className="hero__video-overlay"></div>
           <h1 className="hero__title">The Gordon Ramsey Of Recipe Sites</h1>
+          <button className="hero__cta">
+            <h1 className="hero__cta-title">Start Your Journey</h1>
+          </button>
         </div>
       </div>
     </div>
