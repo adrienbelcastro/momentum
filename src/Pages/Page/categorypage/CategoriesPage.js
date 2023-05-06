@@ -10,14 +10,14 @@ import RecipesList from "../../../Components/recipesList/RecipesList";
 function CategoriesPage() {
   const [recipes, setRecipes] = useState();
 
-  const ingredients = useParams();
+  const categories = useParams();
   const categoryDetails = useLocation();
-  const heroTitle = categoryDetails.state.state.strCategory;
-  const heroThumb = categoryDetails.state.state.strCategoryThumb;
+  // const heroTitle = categoryDetails.state.state.strCategory;
+  // const heroThumb = categoryDetails.state.state.strCategoryThumb;
 
   useEffect(() => {
     axios
-      .get(`${searchByCategory}${ingredients.ingredients}`)
+      .get(`${searchByCategory}${categories.categories}`)
       .then((result) => {
         setRecipes(result.data);
       })
@@ -32,7 +32,7 @@ function CategoriesPage() {
     return (
       <>
         <Header />
-        <RecipesList recipes={recipes} title={heroTitle} thumb={heroThumb} />
+        <RecipesList recipes={recipes} />
         <Footer />
       </>
     );
