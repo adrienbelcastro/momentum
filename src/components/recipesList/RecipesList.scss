@@ -1,0 +1,13 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.recipe-list {
+  margin: 1rem;
+
+  &__container {
+    @include desktop {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
