@@ -15,3 +15,6 @@ export const searchById =
 
 export const searchByCategory =
   "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
+
+export const searchByName =
+  "http://www.themealdb.com/api/json/v1/1/search.php?s=";
