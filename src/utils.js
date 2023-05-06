@@ -11,7 +11,7 @@ export const searchByLetter =
   "https://www.themealdb.com/api/json/v1/1/search.php?f=";
 
 export const searchById =
-  "http://www.themealdb.com/api/json/v1/1/lookup.php?i=";
+  "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
 
 export const searchByCategory =
   "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
