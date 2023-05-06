@@ -4,30 +4,30 @@ import Header from "../../../Components/header/header";
 import Footer from "../../../Components/footer/footer";
 import { searchById } from "../../../utils";
 import { useParams } from "react-router-dom";
+import RecipeDirections from "../../../Components/recipes-individual/RecipeDirections";
 
 function RecipePage() {
-  const [recipes, setRecipes] = useState();
+  const [recipesData, setRecipesData] = useState();
   const recipeId = useParams();
 
   useEffect(() => {
     axios
       .get(`${searchById}${recipeId.id}`)
       .then((result) => {
-        console.log(result.data);
-        setRecipes(result.data);
+        setRecipesData(result.data);
       })
       .catch((error) => {
         console.error(error);
       });
   }, []);
 
-  if (!recipes) {
+  if (!recipesData) {
     return "Loading";
   } else {
     return (
       <>
         <Header />
-
+        <RecipeDirections data={recipesData} />
         <Footer />
       </>
     );
