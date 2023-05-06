@@ -1,0 +1,29 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.recipe-card {
+  @include desktop {
+    width: 50%;
+  }
+  &__container {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    border-bottom: 1px solid grey;
+
+    padding: 1rem 0;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__thumbnail-container {
+  }
+
+  &__thumbnail {
+    width: 6.5rem;
+    height: 4rem;
+    object-fit: cover;
+  }
+}

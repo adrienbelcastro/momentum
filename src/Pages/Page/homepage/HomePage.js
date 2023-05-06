@@ -3,7 +3,7 @@ import Footer from "../../../Components/footer/footer";
 import CategoryGrid from "../../../Components/categories/CategoryGrid";
 import Hero from "../../../Components/hero/Hero";
 import axios from "axios";
-import { categoryApiUrl, searchByLetter } from "../../../utils";
+import { categoryApiUrl } from "../../../utils";
 import { useEffect, useState } from "react";
 
 function HomePage() {
