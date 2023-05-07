@@ -7,7 +7,6 @@ function RecipesList(recipes) {
 
   return (
     <section className="recipe-list">
-      <h1 className="recipe-list__title">Recipes</h1>
       <div className="recipe-list__container">
         {recipeData.map((recipeData) => (
           <Link to={`${recipeData.idMeal}`}>

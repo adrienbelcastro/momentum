@@ -5,6 +5,13 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 5rem;
+
+  padding-bottom: 0.5rem;
+
+  @include tablet {
+    gap: 19rem;
+  }
 
   &__desktop-navbar,
   &__desktop-search,
@@ -12,15 +19,20 @@
     display: none;
   }
 
+  &__logo {
+    width: 4rem;
+    margin-top: 0.8rem;
+  }
+
   &__profile {
     width: 36px;
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     margin-right: 1rem;
   }
 
   @include desktop {
     justify-content: space-between;
-    margin: 2rem;
+    padding: 2rem;
 
     &__desktop-navbar {
       display: flex;
@@ -35,17 +47,17 @@
 
     &__desktop-recipes,
     &__desktop-ingredients,
-    &__desktop-countries {
-      color: white;
+    &__desktop-countries,
+    &__desktop-random-recipe {
       text-decoration: none;
+      font-size: 24px;
+      font-weight: 700;
     }
 
     &__nav {
       display: flex;
       align-items: center;
       gap: 1rem;
-
-      margin-top: 1.5rem;
     }
 
     &__desktop-search {
@@ -66,8 +78,9 @@
 
     &__desktop-signup {
       display: inline-block;
+      font-weight: 700;
       border: none;
-      color: $gold;
+      background: none;
     }
 
     &__sidebar {

@@ -8,14 +8,20 @@ const Footer = () => {
     <>
       <div className="footer">
         <div className="footer__button-container">
-          <button className="footer__button">
-            <AiFillGithub className="footer__github" />
-          </button>
-          <button className="footer__button">
-            <BsLinkedin className="footer__linkedin" />
-          </button>
+          <Link to="https://github.com/adrienbelcastro">
+            <button className="footer__button">
+              <AiFillGithub className="footer__github" />
+            </button>
+          </Link>
+          <Link to="https://www.linkedin.com/in/adrienbelcastro/">
+            <button className="footer__button">
+              <BsLinkedin className="footer__linkedin" />
+            </button>
+          </Link>
         </div>
-        <p>Copyright © 2023 Adrien Belcastro - All Rights Reserved </p>
+        <p className="footer__copyright">
+          Copyright © 2023 Adrien Belcastro - All Rights Reserved{" "}
+        </p>
       </div>
     </>
   );

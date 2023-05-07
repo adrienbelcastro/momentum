@@ -1,2 +1,24 @@
-@import "../../styles/partials/mixins.scss";
-@import "../../styles/partials/variables.scss";
+@import "../../../styles/partials/mixins.scss";
+@import "../../../styles/partials/variables.scss";
+
+.page {
+  &__title {
+    margin-left: 1rem;
+  }
+
+  &__thumbnail {
+    width: 90%;
+    height: auto;
+    padding: 0 1rem;
+    padding-top: 1rem;
+  }
+
+  &__description {
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+
+    background-color: $off-white;
+    border-radius: 10px;
+    text-align: justify;
+  }
+}
