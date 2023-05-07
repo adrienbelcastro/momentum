@@ -12,15 +12,19 @@
   }
   &__button {
     border: none;
+    background: none;
   }
-  &__github {
-    background-color: gold;
-
-    border-radius: 20px;
-  }
-
+  &__github,
   &__linkedin {
-    background-color: gold;
     border-radius: 20px;
+    @include tablet {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &__copyright {
+    font-size: 12px;
+    padding-bottom: 1rem;
   }
 }
