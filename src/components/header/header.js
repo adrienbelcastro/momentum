@@ -7,9 +7,11 @@ import "./header.scss";
 const Header = () => {
   const generator = new AvatarGenerator();
   const profilePic = generator.generateRandomAvatar();
+
   return (
     <>
       <div className="header">
+        <img className="header__logo" src={logo} alt="Mobile Logo"></img>
         <ul className="header__desktop-navbar">
           <img src={logo} className="header__desktop-logo"></img>
           <a href="/" className="header__desktop-recipes">
@@ -22,7 +24,7 @@ const Header = () => {
           <a href="/" className="header__desktop-countries">
             Countries
           </a>
-          <a href="/" className="header__desktop-countries">
+          <a href="/" className="header__desktop-random-recipe">
             Random Recipe
           </a>
         </ul>
