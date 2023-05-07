@@ -8,32 +8,24 @@
     height: 1rem;
     left: 36px;
     top: 36px;
-
-    &:hover {
-      background-color: $gold;
-    }
   }
   &__burger-bars {
-    background: $alabaster;
-
-    &:hover {
-      background: $gold;
-    }
+    background: $black;
   }
   &__cross-btn {
     height: 24px;
     width: 24px;
   }
   &__cross {
-    background: #bdc3c7;
+    background: $black;
   }
   &__menu {
-    // background: #373a47;
+    background: $wheat;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
   }
   &__morph-shape {
-    fill: #373a47;
+    fill: $wheat;
   }
   &__item-list {
     color: #b8b7ad;
@@ -44,19 +36,19 @@
     margin: 1rem 0;
     text-decoration: none;
 
-    color: $alabaster;
+    font-weight: 700;
   }
   &__signup {
     padding-right: 1rem;
     border: none;
     background-color: inherit;
-    color: gold;
+    font-weight: 700;
   }
 
   &__randomizer {
     border: none;
     background-color: inherit;
-    color: gold;
+    font-weight: 700;
   }
   &__search {
     height: 40px;
