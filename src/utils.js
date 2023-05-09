@@ -18,3 +18,6 @@ export const searchByCategory =
 
 export const searchByName =
   "http://www.themealdb.com/api/json/v1/1/search.php?s=";
+
+export const countrySearchUrl =
+  "https://www.themealdb.com/api/json/v1/1/list.php?a=list";
