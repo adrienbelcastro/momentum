@@ -4,10 +4,20 @@
 .recipe-list {
   margin: 1rem;
 
+  @include tablet {
+    margin: 1rem 4rem;
+  }
+
   &__container {
     @include desktop {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(4, 250px);
+      column-gap: 2rem;
+      margin: 0 3.8rem;
+      padding: 0 1rem;
+
+      background-color: $white;
+      box-shadow: 1px 1px 10px 2px $shadow;
     }
   }
 }
