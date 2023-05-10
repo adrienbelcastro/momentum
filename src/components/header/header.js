@@ -29,7 +29,7 @@ const Header = () => {
           <a href="/country" className="header__desktop-countries">
             Countries
           </a>
-          <a href="/" className="header__desktop-random-recipe">
+          <a href="/random" className="header__desktop-random-recipe">
             Random Recipe
           </a>
         </ul>

@@ -1,5 +1,6 @@
 import React from "react";
 import { elastic as Menu } from "react-burger-menu";
+import { Link } from "react-router-dom";
 import "./Sidebar.scss";
 
 export default (Sidebar) => {
@@ -32,7 +33,9 @@ export default (Sidebar) => {
       ></input>
       <div className="sidebar__randomizer-container">
         <button className="sidebar__signup">Sign Up</button>
-        <button className="sidebar__randomizer">Random Recipe</button>
+        <Link to="/random">
+          <button className="sidebar__randomizer">Random Recipe</button>
+        </Link>
       </div>
     </Menu>
   );
