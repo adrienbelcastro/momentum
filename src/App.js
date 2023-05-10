@@ -6,6 +6,7 @@ import CategoryPage from "./Pages/Page/categorypage/CategoriesPage";
 import RecipePage from "./Pages/Page/recipe-page/RecipePage";
 import SearchByCountry from "./Pages/Page/filterbycountry/SearchByCountry";
 import LoginPage from "./Pages/Page/loginpage/LoginPage";
+import CountryMeals from "./Pages/Page/countrymeals/CountryMeals";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/country" element={<SearchByCountry />} />
+          <Route path="/country/:country" element={<CountryMeals />} />
+          <Route path="/country/:country/:id" element={<RecipePage />} />
           <Route path="/:categories" element={<CategoryPage />} />
           <Route path=":categories/:id" element={<RecipePage />} />
           <Route path="/signup" element={<SignUpPage />} />
