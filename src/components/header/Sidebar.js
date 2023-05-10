@@ -22,7 +22,7 @@ export default (Sidebar) => {
       <a href="/" className="sidebar__ingredients">
         Ingredients
       </a>
-      <a href="/countries" className="sidebar__countries">
+      <a href="/country" className="sidebar__countries">
         Countries
       </a>
       <input
