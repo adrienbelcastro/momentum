@@ -29,7 +29,7 @@ export default (Sidebar) => {
       <input
         className="sidebar__search"
         type="search"
-        placeholder="search"
+        placeholder="Search For..."
       ></input>
       <div className="sidebar__randomizer-container">
         <button className="sidebar__signup">Sign Up</button>

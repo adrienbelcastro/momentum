@@ -1,7 +1,7 @@
 import Sidebar from "./Sidebar";
 import { AvatarGenerator } from "random-avatar-generator";
 import logo from "../../assets/images/loading-video.png";
-import { AiOutlineSearch } from "react-icons/ai";
+
 import "./header.scss";
 import { Link } from "react-router-dom";
 
@@ -37,7 +37,7 @@ const Header = () => {
           <input
             className="header__desktop-search"
             type="search"
-            placeholder=" search"
+            placeholder=" Search For..."
           ></input>
           <img
             className="header__profile"
