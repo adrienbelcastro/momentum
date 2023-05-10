@@ -2,7 +2,7 @@ export const categoryApiUrl =
   "https://www.themealdb.com/api/json/v1/1/categories.php";
 
 export const randomMealUrl =
-  "http://www.themealdb.com/api/json/v1/1/random.php";
+  "https://www.themealdb.com/api/json/v1/1/random.php";
 
 export const mealsByCountryUrl =
   "https://www.themealdb.com/api/json/v1/1/filter.php?a=";
