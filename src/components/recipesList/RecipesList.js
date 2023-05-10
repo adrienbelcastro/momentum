@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import RecipeCard from "../recipeCard/RecipeCard";
+import RecipeCard from "../recipecard/RecipeCard";
 import "./RecipesList.scss";
 
-function RecipesList(recipes) {
-  const recipeData = recipes.recipes.meals;
+function RecipesList(data) {
+  const recipeData = data.data.meals;
+
   return (
     <section className="recipe-list">
-      <Link to={`/`}>
+      <Link to={`/country`}>
         <div className="recipe-directions__back-arrow">
           <AiOutlineArrowLeft className="" />
         </div>
