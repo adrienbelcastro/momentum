@@ -1,23 +1,22 @@
 @import "../../styles/partials/mixins.scss";
 @import "../../styles/partials/variables.scss";
 
-.recipe-list {
-  margin: 1rem;
-
-  @include tablet {
-    margin: 1rem 4rem;
-  }
-
+.countries {
   &__container {
     @include desktop {
       display: grid;
-      grid-template-columns: repeat(4, 250px);
+      grid-template-columns: repeat(2, 500px);
       column-gap: 2rem;
-      margin: 0 3.8rem;
-      padding: 0 1rem;
-
+      margin: 2rem 3.8rem;
+      padding: 4rem;
       background-color: $white;
       box-shadow: 1px 1px 10px 2px $shadow;
     }
+  }
+  &__country {
+    padding: 1rem 0;
+
+    text-align: center;
+    border-bottom: 1px solid $shadow;
   }
 }

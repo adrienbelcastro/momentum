@@ -1,5 +1,4 @@
-import SignUpForm from "../../Components/SignUpForm/SignUpForm";
-import Hero from "../../assets/images/loading-video.png";
+import SignUpForm from "../../../Components/signupform/SignUpForm";
 import "./SignUp.scss";
 
 export default function SignUpPage() {

@@ -8,6 +8,7 @@
 
   margin: 0 2rem;
   margin-bottom: 1rem;
+  background: $wheat;
 
   &__subheader {
     padding: 1rem 0;
@@ -24,11 +25,13 @@
     padding-bottom: 1rem;
 
     border: none;
-    border-bottom: solid $white;
+    border-bottom: solid $black;
+    background: $wheat;
 
     &::placeholder {
-      color: $white;
+      color: $black;
       font-size: 12px;
+      font-weight: 700;
     }
   }
 

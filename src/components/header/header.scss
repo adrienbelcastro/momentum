@@ -5,14 +5,15 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 5rem;
+  gap: 2.3rem;
 
   padding-bottom: 0.5rem;
 
   @include tablet {
-    gap: 19rem;
+    gap: 9.5rem;
   }
 
+  &__desktop-logo,
   &__desktop-navbar,
   &__desktop-search,
   &__desktop-signup {
@@ -22,6 +23,10 @@
   &__logo {
     width: 4rem;
     margin-top: 0.8rem;
+
+    @include desktop {
+      display: none;
+    }
   }
 
   &__profile {
@@ -50,7 +55,7 @@
     &__desktop-countries,
     &__desktop-random-recipe {
       text-decoration: none;
-      font-size: 24px;
+      font-size: 18px;
       font-weight: 700;
     }
 

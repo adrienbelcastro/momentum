@@ -3,6 +3,7 @@ import { AvatarGenerator } from "random-avatar-generator";
 import logo from "../../assets/images/loading-video.png";
 import { AiOutlineSearch } from "react-icons/ai";
 import "./header.scss";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const generator = new AvatarGenerator();
@@ -11,9 +12,13 @@ const Header = () => {
   return (
     <>
       <div className="header">
-        <img className="header__logo" src={logo} alt="Mobile Logo"></img>
-        <ul className="header__desktop-navbar">
+        <Link to="/">
+          <img className="header__logo" src={logo} alt="Mobile Logo"></img>
+        </Link>
+        <Link to="/">
           <img src={logo} className="header__desktop-logo"></img>
+        </Link>
+        <ul className="header__desktop-navbar">
           <a href="/" className="header__desktop-recipes">
             Recipe Category
           </a>
@@ -21,7 +26,7 @@ const Header = () => {
           <a href="/" className="header__desktop-ingredients">
             Ingredients
           </a>
-          <a href="/" className="header__desktop-countries">
+          <a href="/country" className="header__desktop-countries">
             Countries
           </a>
           <a href="/" className="header__desktop-random-recipe">

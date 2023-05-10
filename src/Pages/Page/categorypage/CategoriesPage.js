@@ -40,7 +40,7 @@ function CategoriesPage() {
           <img className="page__thumb" src={heroThumb}></img>
           <div className="page__description">{heroDescription}</div> */}
         </section>
-        <RecipesList recipes={recipes} />
+        <RecipesList data={recipes} />
         <Footer />
       </>
     );

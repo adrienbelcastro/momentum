@@ -12,7 +12,7 @@
     background: rgba(0, 0, 0, 0.7);
     position: absolute;
     left: 0;
-    top: 5.3rem;
+    top: 5.6rem;
     width: 100%;
     height: 100%;
 
@@ -37,7 +37,7 @@
     }
 
     @include desktop {
-      top: 30rem;
+      top: 16rem;
       font-size: 10rem;
       left: 14rem;
     }
@@ -45,7 +45,7 @@
 
   &__cta {
     position: relative;
-    bottom: 12rem;
+    bottom: 10rem;
     left: 2.5rem;
 
     height: 36px;
@@ -64,7 +64,7 @@
 
     @include desktop {
       left: 26rem;
-      bottom: 20rem;
+      bottom: 15rem;
 
       padding: 0 4rem;
       height: 3rem;
