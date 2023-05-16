@@ -13,11 +13,20 @@
 
     background-color: black;
     border-radius: 10px;
+
+    @include desktop {
+      width: 10.5rem;
+      height: 7.5rem;
+    }
   }
 
   &__title {
     font-size: 0.7rem;
     text-align: center;
     padding: 0.5rem;
+
+    @include desktop {
+      font-size: 20px;
+    }
   }
 }

@@ -28,6 +28,10 @@
       right: 5.35rem;
       bottom: -17.15rem;
     }
+
+    @include desktop {
+      display: none;
+    }
   }
 
   &__container {
@@ -46,13 +50,17 @@
     }
 
     @include desktop {
-      width: 1100px;
+      display: grid;
+      grid-template-columns: repeat(2, 450px);
+      column-gap: 2rem;
+      margin: 2rem 10rem;
+      padding: 4rem;
+      overflow: visible;
     }
   }
 
   &__title {
-    width: 50%;
-    font-size: 14px;
+    font-size: $mobile-subheader;
 
     border-bottom: 1px solid $gold;
     padding-bottom: 0.2rem;
