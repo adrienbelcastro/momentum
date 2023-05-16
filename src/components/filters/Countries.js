@@ -4,15 +4,18 @@ import RecipeCard from "../recipecard/RecipeCard";
 import "./Countries.scss";
 
 function Countries(data) {
-  const countryData = data.data.meals;
+  const countryData = data.country.meals;
 
   return (
-    <section className="countries-list">
-      <Link to={`/`}>
-        <div className="recipe-directions__back-arrow">
-          <AiOutlineArrowLeft className="" />
-        </div>
-      </Link>
+    <section className="countries">
+      <div className="countries__flex">
+        <Link to={`/`}>
+          <div className="recipe-directions__back-arrow">
+            <AiOutlineArrowLeft className="" />
+          </div>
+        </Link>
+        <h1 className="countries__title">Search By Countries</h1>
+      </div>
       <div className="countries__container">
         {countryData.map((countryData) => (
           <Link to={`${countryData.strArea}`}>
