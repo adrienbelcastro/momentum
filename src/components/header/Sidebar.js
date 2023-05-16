@@ -1,6 +1,7 @@
 import React from "react";
+import logo from "../../assets/images/loading-video.png";
 import { elastic as Menu } from "react-burger-menu";
-import { Link } from "react-router-dom";
+
 import "./Sidebar.scss";
 
 export default (Sidebar) => {
@@ -16,27 +17,23 @@ export default (Sidebar) => {
       itemClassName={"sidebar__item"}
       overlayClassName={"sidebar__overlay"}
     >
-      <a href="/" className="sidebar__recipes">
-        Recipe Category
+      <a href="/" className="sidebar__links">
+        HomePage
       </a>
 
-      <a href="/" className="sidebar__ingredients">
-        Ingredients
+      <a href="/planner" className="sidebar__links">
+        Meal Planner
       </a>
-      <a href="/country" className="sidebar__countries">
+      <a href="/country" className="sidebar__links">
         Countries
       </a>
-      <input
-        className="sidebar__search"
-        type="search"
-        placeholder="Search For..."
-      ></input>
-      <div className="sidebar__randomizer-container">
-        <button className="sidebar__signup">Sign Up</button>
-        <Link to="/random">
-          <button className="sidebar__randomizer">Random Recipe</button>
-        </Link>
-      </div>
+      <a href="/random" className="sidebar__links">
+        Random Recipe
+      </a>
+      <a href="/login" className="sidebar__links">
+        Login
+      </a>
+      <img src={logo} className="sidebar__logo"></img>
     </Menu>
   );
 };
