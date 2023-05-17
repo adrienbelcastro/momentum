@@ -19,7 +19,7 @@ function RecipePage() {
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, [recipeId]);
 
   if (!recipesData) {
     return "Loading";
