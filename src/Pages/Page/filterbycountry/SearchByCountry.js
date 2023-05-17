@@ -25,7 +25,7 @@ function CountryResults() {
     return (
       <>
         <Header />
-        <Countries data={country} />
+        <Countries country={country} />
         <Footer />
       </>
     );

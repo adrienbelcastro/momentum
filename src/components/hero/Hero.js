@@ -1,5 +1,6 @@
 import "./Hero.scss";
 import video from "../../assets/videos/hero-vid.mp4";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -11,9 +12,11 @@ const Hero = () => {
           </video>
           <div className="hero__video-overlay"></div>
           <h1 className="hero__title">The Gordon Ramsey Of Recipe Sites</h1>
-          <button className="hero__cta">
-            <h1 className="hero__cta-title">Start Your Journey</h1>
-          </button>
+          <Link to="/country">
+            <button className="hero__cta">
+              <h1 className="hero__cta-title">Start Your Journey</h1>
+            </button>
+          </Link>
         </div>
       </div>
     </div>

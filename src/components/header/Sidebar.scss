@@ -30,6 +30,7 @@
   &__item-list {
     color: #b8b7ad;
     padding: 0.8em;
+    font-size: $mobile-subheader;
   }
   &__item {
     display: inline-block;
@@ -38,30 +39,15 @@
 
     font-weight: 700;
   }
-  &__signup {
-    padding-right: 1rem;
-    border: none;
-    background-color: inherit;
-    font-weight: 700;
-  }
 
-  &__randomizer {
-    border: none;
-    background-color: inherit;
-    font-weight: 700;
-  }
-  &__search {
-    height: 40px;
-    width: 14rem;
-
-    padding-left: 0.5rem;
-
-    border: solid $mercury;
-    border-radius: 4px;
-    background-color: $alabaster;
-  }
   &__overlay {
     background: rgba(0, 0, 0, 0.3);
+  }
+
+  &__logo {
+    width: 200px;
+    position: absolute;
+    bottom: 5rem;
   }
 }
 

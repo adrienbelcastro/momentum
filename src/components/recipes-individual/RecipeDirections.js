@@ -1,12 +1,18 @@
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import "./RecipeDirections.scss";
+import Macros from "../macros/Macros";
+
+import React from "react";
+
 function RecipeDirections({ data }) {
   const recipeData = data.meals[0];
 
   const ingredientsKeys = Object.keys(recipeData).filter((item) =>
     item.includes("Ingredient")
   );
+
+  const sentences = recipeData.strInstructions.split("\r\n");
 
   const ingredients = ingredientsKeys.map((item, index) => {
     return {
@@ -18,8 +24,8 @@ function RecipeDirections({ data }) {
   return (
     <div className="recipe-directions">
       <Link to={`/${recipeData.strCategory}`}>
-        <div className="recipe-directions__back-arrow">
-          <AiOutlineArrowLeft className="" />
+        <div className="recipe-directions__arrow-container">
+          <AiOutlineArrowLeft className="recipe-directions__arrow" />
         </div>
       </Link>
       <div className="recipe-directions__container">
@@ -30,20 +36,21 @@ function RecipeDirections({ data }) {
         <img
           className="recipe-directions__thumbnail"
           src={recipeData.strMealThumb}
-          alt="Thumbnail Image"
+          alt="Thumbnail"
         ></img>
+        <Macros name={recipeData.strMeal} />
         <h3 className="recipe-directions__ingredients-title">Ingredients</h3>
         <div className="recipe-directions__ingredients-container">
           <div className="recipe-directions__ingredients-content">
-            {ingredients.map((ingredient) => (
-              <h4 className="recipe-directions__ingredients">
+            {ingredients.map((ingredient, index) => (
+              <h4 className="recipe-directions__ingredients" key={index}>
                 {ingredient.name}
               </h4>
             ))}
           </div>
           <div className="recipe-directions__measurements-container">
-            {ingredients.map((ingredient) => (
-              <h4 className="recipe-directions__measurements">
+            {ingredients.map((ingredient, index) => (
+              <h4 key={index} className="recipe-directions__measurements">
                 {ingredient.measure}
               </h4>
             ))}
@@ -53,9 +60,11 @@ function RecipeDirections({ data }) {
           <h4 className="recipe-directions__instructions-title">
             Instructions
           </h4>
-          <p className="recipe-directions__instructions">
-            {recipeData.strInstructions}
-          </p>
+          {sentences.map((sentence, index) => (
+            <div key={index} className="recipe-directions__instructions">
+              {sentence}
+            </div>
+          ))}
         </div>
       </div>
     </div>

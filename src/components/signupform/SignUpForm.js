@@ -1,9 +1,15 @@
 import "./SignUpForm.scss";
 import { Link } from "react-router-dom";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
 const SignUpForm = () => {
   return (
     <div className="form">
+      <Link to="/">
+        <div className="recipe-directions__back-arrow">
+          <AiOutlineArrowLeft className="" />
+        </div>
+      </Link>
       <h2 className="form__subheader">Create An Account</h2>
       <h4 className="form__tagline">No More Boxed Mac And Cheese</h4>
       <div>

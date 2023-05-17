@@ -21,3 +21,9 @@ export const searchByName =
 
 export const countrySearchUrl =
   "https://www.themealdb.com/api/json/v1/1/list.php?a=list";
+
+export const nutritionApiUrl =
+  "https://api.edamam.com/api/recipes/v2?type=public&q=";
+
+export const nutritionApiKey =
+  "&app_id=62f5ffa9&app_key=37a095815028f64f00a7e0f38f6c0c94";

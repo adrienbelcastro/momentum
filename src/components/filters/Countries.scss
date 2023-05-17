@@ -10,13 +10,30 @@
       margin: 2rem 3.8rem;
       padding: 4rem;
       background-color: $white;
-      box-shadow: 1px 1px 10px 2px $shadow;
+      box-shadow: $box-shadow;
     }
   }
+
+  &__flex {
+    @include desktop {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      margin-left: 4rem;
+    }
+  }
+  &__title {
+    text-align: center;
+    margin: 1rem;
+    font-size: $mobile-page-header;
+  }
+
   &__country {
     padding: 1rem 0;
 
     text-align: center;
     border-bottom: 1px solid $shadow;
+
+    font-size: $mobile-subheader;
   }
 }

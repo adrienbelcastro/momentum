@@ -21,10 +21,20 @@
       width: 18px;
       height: 18px;
     }
+    @include desktop {
+      width: 25px;
+      height: 25px;
+    }
   }
 
   &__copyright {
     font-size: 12px;
     padding-bottom: 1rem;
+    @include tablet {
+      font-size: 14px;
+    }
+    @include desktop {
+      font-size: 18px;
+    }
   }
 }

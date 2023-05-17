@@ -12,6 +12,13 @@
     margin: 5rem;
   }
 
+  &__arrow {
+    @include desktop {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
   &__category {
     padding-top: 1rem;
   }
@@ -24,7 +31,7 @@
   &__thumbnail {
     width: 100%;
     margin-top: 2rem;
-    box-shadow: 1px 1px 10px 2px $shadow;
+    box-shadow: $box-shadow;
   }
 
   &__ingredients-container {

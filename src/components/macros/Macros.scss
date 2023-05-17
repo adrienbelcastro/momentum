@@ -1,0 +1,41 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.macros {
+  background-color: $off-white;
+  border-radius: 10px;
+
+  &__disclaimer {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    @include tablet {
+      text-align: center;
+    }
+    @include desktop {
+      text-align: center;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__button,
+  &__select {
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    background-color: $gold;
+  }
+
+  &__form-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+}

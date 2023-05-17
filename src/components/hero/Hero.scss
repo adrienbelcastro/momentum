@@ -56,8 +56,8 @@
     border: none;
 
     @include tablet {
-      bottom: 14rem;
-      left: 16.5rem;
+      bottom: 8rem;
+      left: 15.5rem;
 
       padding: 0 2rem;
     }
@@ -73,7 +73,7 @@
 
   &__cta-title {
     background: none;
-    font-size: 16px;
+    font-size: $mobile-body;
     @include tablet {
       font-size: 24px;
     }
