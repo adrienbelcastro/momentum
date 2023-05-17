@@ -25,6 +25,7 @@ function CountryResults() {
     return (
       <>
         <Header />
+        <h1 className="countries__title">Search By Countries</h1>
         <Countries country={country} />
         <Footer />
       </>
