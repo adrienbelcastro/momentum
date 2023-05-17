@@ -7,7 +7,7 @@ const Login = () => {
     <>
       <div className="form">
         <Link to="/">
-          <div className="recipe-directions__back-arrow">
+          <div className="form__back-arrow">
             <AiOutlineArrowLeft className="" />
           </div>
         </Link>

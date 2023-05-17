@@ -24,8 +24,8 @@ function RecipeDirections({ data }) {
   return (
     <div className="recipe-directions">
       <Link to={`/${recipeData.strCategory}`}>
-        <div className="recipe-directions__arrow-container">
-          <AiOutlineArrowLeft className="recipe-directions__arrow" />
+        <div>
+          <AiOutlineArrowLeft className="arrow" />
         </div>
       </Link>
       <div className="recipe-directions__container">
