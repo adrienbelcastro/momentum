@@ -22,7 +22,7 @@ function CategoriesPage() {
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, [categories.categories]);
 
   if (!recipes) {
     return "Loading";

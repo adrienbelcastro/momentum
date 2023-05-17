@@ -23,9 +23,16 @@
     }
   }
   &__title {
-    text-align: center;
     margin: 1rem;
     font-size: $mobile-page-header;
+
+    @include tablet {
+      margin-left: 3rem;
+    }
+    @include desktop {
+      margin-left: 5rem;
+      font-size: $desktop-title;
+    }
   }
 
   &__country {
@@ -35,5 +42,13 @@
     border-bottom: 1px solid $shadow;
 
     font-size: $mobile-subheader;
+  }
+
+  &__arrow-container {
+    margin-left: 1rem;
+
+    @include tablet {
+      margin-left: 3rem;
+    }
   }
 }

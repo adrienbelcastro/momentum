@@ -9,17 +9,16 @@ function CategoryGrid(details) {
   return (
     <section className="category-list">
       <button className="category-list__button">
-        <AiOutlineArrowRight className="" />
+        <AiOutlineArrowRight className="arrow" />
       </button>
       <h1 className="category-list__title">DINE BY CATEGORIES</h1>
       <div className="category-list__container">
         {categoryList.map((categoryList) => (
           <Link
             to={`/${categoryList.strCategory}`}
-            state={{ state: categoryList }}
+            key={categoryList.idCategory}
           >
             <CategoryCard
-              key={categoryList.idCategory}
               title={categoryList.strCategory}
               thumbnail={categoryList.strCategoryThumb}
               id={categoryList.idCategory}
