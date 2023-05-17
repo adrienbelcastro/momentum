@@ -1,0 +1,75 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.category-list {
+  margin: 1rem;
+  @include tablet {
+    margin: 2rem;
+  }
+  @include desktop {
+    margin: 2rem 5.5rem;
+  }
+
+  &__button {
+    width: 50px;
+    height: 50px;
+
+    position: absolute;
+    right: 3.25rem;
+    bottom: -14.6rem;
+
+    border: none;
+    border-radius: 50px;
+    opacity: 0.82;
+    background-color: $alabaster;
+
+    @include tablet {
+      position: absolute;
+      right: 5.35rem;
+      bottom: -17.15rem;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__container {
+    width: 300px;
+
+    display: flex;
+    gap: 2rem;
+
+    padding-top: 1rem;
+
+    overflow: scroll;
+
+    @include tablet {
+      width: 700px;
+      margin-left: 1rem;
+    }
+
+    @include desktop {
+      display: grid;
+      grid-template-columns: repeat(2, 450px);
+      column-gap: 2rem;
+      margin: 2rem 10rem;
+      padding: 4rem;
+      overflow: visible;
+    }
+  }
+
+  &__title {
+    font-size: $mobile-subheader;
+
+    border-bottom: 1px solid $gold;
+    padding-bottom: 0.2rem;
+
+    @include tablet {
+      @include tablet-desktop-title;
+    }
+    @include desktop {
+      @include tablet-desktop-title;
+    }
+  }
+}

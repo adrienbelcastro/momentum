@@ -1,0 +1,94 @@
+@import "../../styles/partials/variables.scss";
+@import "../../styles/partials/mixins.scss";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin: 0 2rem;
+  margin-bottom: 1rem;
+  background: $wheat;
+
+  &__subheader {
+    padding: 1rem 0;
+  }
+
+  &__tagline {
+    padding-bottom: 1rem;
+  }
+
+  &__input {
+    width: 100%;
+    padding-top: 1.5rem;
+    padding-left: 0.5rem;
+    padding-bottom: 1rem;
+
+    border: none;
+    border-bottom: solid $black;
+    background: $wheat;
+
+    &::placeholder {
+      color: $black;
+      font-size: 12px;
+      font-weight: 700;
+    }
+  }
+
+  &__btn-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__btn {
+    background-color: $gold;
+
+    width: 65%;
+    height: 40px;
+
+    margin-top: 2rem;
+    border-radius: 20px;
+    border: none;
+  }
+
+  &__btn-title {
+    background-color: $gold;
+    color: black;
+    border-radius: 20px;
+  }
+
+  &__login-container {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+
+  &__login-link {
+    text-decoration: none;
+
+    font-weight: 600;
+  }
+
+  &__back-arrow {
+    margin-top: 2rem;
+  }
+
+  @include tablet {
+    width: 510px;
+
+    padding: 2.5rem 3.5rem;
+    margin: 0;
+
+    &__input {
+      padding-top: 0;
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  @include desktop {
+    width: 510px;
+
+    padding: 0.5rem 3.5rem;
+    margin: 0;
+  }
+}

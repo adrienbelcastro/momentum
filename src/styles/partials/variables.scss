@@ -1,0 +1,27 @@
+// Breakpoint Mixins
+$mobile-breakpoint: 320px;
+$tablet-breakpoint: 1279px;
+$desktop-breakpoint: 1280px;
+
+//Primary Colours
+$gold: #fbb121;
+$white: #ffffff;
+$off-white: #f5f5f5;
+$black: black;
+$wheat: wheat;
+
+//Secondary Colors
+$alabaster: #fafafa;
+$mercury: #e1e1e1;
+$shadow: #888888;
+
+//Box Shadow
+$box-shadow: 1px 1px 10px 2px $shadow;
+
+//Font Sizes
+$mobile-page-header: 32px;
+$mobile-subheader: 18px;
+$mobile-body: 16px;
+$desktop-body: 24px;
+$desktop-title: 48px;
+$desktop-subheader: 36px;

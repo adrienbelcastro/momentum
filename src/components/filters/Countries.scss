@@ -1,0 +1,54 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.countries {
+  &__container {
+    @include desktop {
+      display: grid;
+      grid-template-columns: repeat(2, 500px);
+      column-gap: 2rem;
+      margin: 2rem 3.8rem;
+      padding: 4rem;
+      background-color: $white;
+      box-shadow: $box-shadow;
+    }
+  }
+
+  &__flex {
+    @include desktop {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      margin-left: 4rem;
+    }
+  }
+  &__title {
+    margin: 1rem;
+    font-size: $mobile-page-header;
+
+    @include tablet {
+      margin-left: 3rem;
+    }
+    @include desktop {
+      margin-left: 5rem;
+      font-size: $desktop-title;
+    }
+  }
+
+  &__country {
+    padding: 1rem 0;
+
+    text-align: center;
+    border-bottom: 1px solid $shadow;
+
+    font-size: $mobile-subheader;
+  }
+
+  &__arrow-container {
+    margin-left: 1rem;
+
+    @include tablet {
+      margin-left: 3rem;
+    }
+  }
+}

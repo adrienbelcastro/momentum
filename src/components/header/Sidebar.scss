@@ -1,0 +1,61 @@
+@import "../../styles/partials/variables.scss";
+@import "../../styles/partials/mixins.scss";
+/* Position and sizing of burger button */
+.sidebar {
+  &__burger-btn {
+    position: fixed;
+    width: 1.3rem;
+    height: 1rem;
+    left: 36px;
+    top: 36px;
+  }
+  &__burger-bars {
+    background: $black;
+  }
+  &__cross-btn {
+    height: 24px;
+    width: 24px;
+  }
+  &__cross {
+    background: $black;
+  }
+  &__menu {
+    background: $wheat;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+  }
+  &__morph-shape {
+    fill: $wheat;
+  }
+  &__item-list {
+    color: #b8b7ad;
+    padding: 0.8em;
+    font-size: $mobile-subheader;
+  }
+  &__item {
+    display: inline-block;
+    margin: 1rem 0;
+    text-decoration: none;
+
+    font-weight: 700;
+  }
+
+  &__overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  &__logo {
+    width: 200px;
+    position: absolute;
+    bottom: 5rem;
+  }
+}
+
+/*
+  Sidebar wrapper styles
+  Note: Package doesn't allow this class to converted into SASS naming scheme
+  */
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}

@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SignUpPage from "./Pages/Page/signuppage/SignUp";
+import HomePage from "./Pages/Page/homepage/HomePage";
+import CategoryPage from "./Pages/Page/categorypage/CategoriesPage";
+import RecipePage from "./Pages/Page/recipe-page/RecipePage";
+import SearchByCountry from "./Pages/Page/filterbycountry/SearchByCountry";
+import LoginPage from "./Pages/Page/loginpage/LoginPage";
+import CountryMeals from "./Pages/Page/countrymeals/CountryMeals";
+import RandomRecipe from "./Pages/Page/randomrecipe/RandomRecipe";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/country" element={<SearchByCountry />} />
+          <Route path="/country/:country" element={<CountryMeals />} />
+          <Route path="/country/:country/:id" element={<RecipePage />} />
+          <Route path="/:categories" element={<CategoryPage />} />
+          <Route path=":categories/:id" element={<RecipePage />} />
+          <Route path="/random" element={<RandomRecipe />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

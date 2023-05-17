@@ -1,0 +1,19 @@
+@import "../../../styles/partials/mixins.scss";
+@import "../../../styles/partials/variables.scss";
+
+.page {
+  &__title {
+    margin-left: 1rem;
+
+    @include tablet {
+      margin-left: 4rem;
+      font-size: $mobile-page-header;
+    }
+
+    @include desktop {
+      margin-left: 5rem;
+
+      font-size: $desktop-title;
+    }
+  }
+}
