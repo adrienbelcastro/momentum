@@ -33,6 +33,7 @@ function App() {
   //   dinner: [],
   //   snack: [],
   // });
+  console.log(1);
 
   // !planner && sessionStorage.setItem("planner", data);
   console.log(breakfast);
