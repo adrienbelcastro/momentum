@@ -20,7 +20,8 @@ export default (Sidebar) => {
       <a href="/" className="sidebar__links">
         HomePage
       </a>
-
+      //Meal Planner Page is currently not displaying the data properly. This is
+      feature is now apart of phase 2.
       {/* <a href="/planner" className="sidebar__links">
         Meal Planner
       </a> */}
