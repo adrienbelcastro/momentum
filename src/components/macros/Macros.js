@@ -4,17 +4,25 @@ import "./Macros.scss";
 import axios from "axios";
 import { nutritionApiKey, nutritionApiUrl } from "../../utils";
 
-function Macros({ name }) {
+function Macros({
+  name,
+  setBreakfast,
+  setCalories,
+  setLunch,
+  setDinner,
+  setSnack,
+}) {
   const recipeName = name;
   const [nutritionInfo, setNutritionInfo] = useState();
   const [nutrients, setNutrients] = useState({});
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("Breakfast");
 
   useEffect(() => {
     axios
       .get(`${nutritionApiUrl}${recipeName}${nutritionApiKey}`)
       .then((result) => {
         const res = result.data.hits[0];
+        console.log(res);
         setNutritionInfo(res);
         setNutrients({
           category: category,
@@ -33,14 +41,24 @@ function Macros({ name }) {
   }, [recipeName, category]);
 
   const handleSubmit = (event) => {
-    const planner = JSON.parse(sessionStorage.getItem("planner"));
-
-    planner[nutrients.category] = [
-      ...planner[nutrients.category],
-      nutrients.macros,
-    ];
-
-    sessionStorage.setItem("planner", JSON.stringify(planner));
+    event.preventDefault();
+    // setCalories.setCalories());
+    if (category === "Breakfast") {
+      setBreakfast.setBreakfast(nutritionInfo);
+    } else if (category === "Lunch") {
+      setLunch.setLunch(nutritionInfo);
+    } else if (category === "Dinner") {
+      setDinner.setDinner(nutritionInfo);
+    } else if (category === "Snacl") {
+      setSnack.setSnack(nutritionInfo);
+    }
+    // setCalories(setNutrients);
+    //   const planner = JSON.parse(sessionStorage.getItem("planner"));
+    //   planner[nutrients.category] = [
+    //     ...planner[nutrients.category],
+    //     nutrients.macros,
+    //   ];
+    //   sessionStorage.setItem("planner", JSON.stringify(planner));
   };
 
   if (!nutritionInfo) {

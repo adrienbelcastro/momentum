@@ -21,9 +21,9 @@ export default (Sidebar) => {
         HomePage
       </a>
 
-      <a href="/planner" className="sidebar__links">
+      {/* <a href="/planner" className="sidebar__links">
         Meal Planner
-      </a>
+      </a> */}
       <a href="/country" className="sidebar__links">
         Countries
       </a>

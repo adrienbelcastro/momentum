@@ -9,23 +9,33 @@ import SearchByCountry from "./Pages/Page/filterbycountry/SearchByCountry";
 import LoginPage from "./Pages/Page/loginpage/LoginPage";
 import CountryMeals from "./Pages/Page/countrymeals/CountryMeals";
 import RandomRecipe from "./Pages/Page/randomrecipe/RandomRecipe";
+import { useState } from "react";
+
+//So When trying to update the state from the App.js. I am able to get the the state to update when I switch to the meal planner
 
 function App() {
-  const planner = JSON.parse(sessionStorage.getItem("planner"));
-  const totalCalories = JSON.parse(sessionStorage.getItem("planner.calories"));
+  // const [calories, setCalories] = useState();
+  // const [breakfast, setBreakfast] = useState({});
+  // const [lunch, setLunch] = useState({});
+  // const [dinner, setDinner] = useState({});
+  // const [snack, setSnack] = useState({});
+  // const planner = JSON.parse(sessionStorage.getItem("planner"));
+  // const totalCalories = JSON.parse(sessionStorage.getItem("planner.calories"));
 
-  const data = JSON.stringify({
-    calories: {
-      current: 0,
-      total: 3000,
-    },
-    breakfast: [],
-    lunch: [],
-    dinner: [],
-    snack: [],
-  });
+  // planner={planner} - prop that needs to be passed down
+  // const data = JSON.stringify({
+  //   calories: {
+  //     current: 0,
+  //     total: 3000,
+  //   },
+  //   breakfast: [],
+  //   lunch: [],
+  //   dinner: [],
+  //   snack: [],
+  // });
 
-  !planner && sessionStorage.setItem("planner", data);
+  // !planner && sessionStorage.setItem("planner", data);
+  console.log(breakfast);
 
   return (
     <>
@@ -36,11 +46,42 @@ function App() {
           <Route path="/country/:country" element={<CountryMeals />} />
           <Route path="/country/:country/:id" element={<RecipePage />} />
           <Route path="/:categories" element={<CategoryPage />} />
-          <Route path=":categories/:id" element={<RecipePage />} />
-          <Route path="/random" element={<RandomRecipe />} />
+          <Route
+            path=":categories/:id"
+            // element={
+            //   <RecipePage
+            //     setCalories={setCalories}
+            //     setBreakfast={setBreakfast}
+            //     setLunch={setLunch}
+            //     setDinner={setDinner}
+            //     setSnack={setSnack}
+            //   />
+            // }
+          />
+          <Route
+            path="/random"
+            // element={
+            //   <RandomRecipe
+            //     setCalories={setCalories}
+            //     setBreakfast={setBreakfast}
+            //     setLunch={setLunch}
+            //     setDinner={setDinner}
+            //     setSnack={setSnack}
+            //   />
+            // }
+          />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/planner" element={<MealPlanner planner={planner} />} />
+          {/* <Route
+            path="/planner"
+            element={
+              <MealPlanner
+                breakfast={breakfast}
+                lunch={lunch}
+                dinner={dinner}
+                snack={snack}
+              />
+          } /> */}
         </Routes>
       </BrowserRouter>
     </>

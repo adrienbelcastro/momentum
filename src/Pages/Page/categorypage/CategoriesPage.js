@@ -24,7 +24,7 @@ function CategoriesPage() {
       });
   }, []);
 
-  if (!recipes || !categoryDetails) {
+  if (!recipes) {
     return "Loading";
   } else {
     return (
