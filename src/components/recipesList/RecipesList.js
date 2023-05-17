@@ -10,14 +10,13 @@ function RecipesList(data) {
     <section className="recipe-list">
       <Link to={`/country`}>
         <div className="recipe-directions__back-arrow">
-          <AiOutlineArrowLeft className="" />
+          <AiOutlineArrowLeft className="arrow" />
         </div>
       </Link>
       <div className="recipe-list__container">
         {recipeData.map((recipeData) => (
-          <Link to={`${recipeData.idMeal}`}>
+          <Link to={`${recipeData.idMeal}`} key={recipeData.idMeal}>
             <RecipeCard
-              key={recipeData.idMeal}
               title={recipeData.strMeal}
               thumbnail={recipeData.strMealThumb}
               id={recipeData.idMeal}
