@@ -4,28 +4,18 @@ import "./Macros.scss";
 import axios from "axios";
 import { nutritionApiKey, nutritionApiUrl } from "../../utils";
 
-function Macros({
-  name,
-  setBreakfast,
-  setCalories,
-  setLunch,
-  setDinner,
-  setSnack,
-}) {
+function Macros({ name }) {
   const recipeName = name;
   const [nutritionInfo, setNutritionInfo] = useState();
   const [nutrients, setNutrients] = useState({});
-  const [category, setCategory] = useState("Breakfast");
 
   useEffect(() => {
     axios
       .get(`${nutritionApiUrl}${recipeName}${nutritionApiKey}`)
       .then((result) => {
         const res = result.data.hits[0];
-        console.log(res);
         setNutritionInfo(res);
         setNutrients({
-          category: category,
           macros: {
             name: recipeName,
             calories: Math.round(res.recipe.calories),
@@ -38,28 +28,7 @@ function Macros({
       .catch((error) => {
         console.error(error);
       });
-  }, [recipeName, category]);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // setCalories.setCalories());
-    if (category === "Breakfast") {
-      setBreakfast.setBreakfast(nutritionInfo);
-    } else if (category === "Lunch") {
-      setLunch.setLunch(nutritionInfo);
-    } else if (category === "Dinner") {
-      setDinner.setDinner(nutritionInfo);
-    } else if (category === "Snacl") {
-      setSnack.setSnack(nutritionInfo);
-    }
-    // setCalories(setNutrients);
-    //   const planner = JSON.parse(sessionStorage.getItem("planner"));
-    //   planner[nutrients.category] = [
-    //     ...planner[nutrients.category],
-    //     nutrients.macros,
-    //   ];
-    //   sessionStorage.setItem("planner", JSON.stringify(planner));
-  };
+  }, [recipeName]);
 
   if (!nutritionInfo) {
     return "Loading";
@@ -78,22 +47,6 @@ function Macros({
           <h4 className="macros__protein">
             Protein: {nutrients.macros.protein}g
           </h4>
-
-          <form onSubmit={handleSubmit} className="macros__form-container">
-            <select
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-              className="macros__select"
-            >
-              <option>Breakfast</option>
-              <option>Lunch</option>
-              <option>Dinner</option>
-              <option>Snack</option>
-            </select>
-            <button className="macros__button" type="submit">
-              Add To Planner +
-            </button>
-          </form>
         </div>
       </div>
     );

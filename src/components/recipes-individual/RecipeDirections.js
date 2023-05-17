@@ -5,14 +5,7 @@ import Macros from "../macros/Macros";
 
 import React from "react";
 
-function RecipeDirections({
-  data,
-  setBreakfast,
-  setCalories,
-  setLunch,
-  setDinner,
-  setSnack,
-}) {
+function RecipeDirections({ data }) {
   const recipeData = data.meals[0];
 
   const ingredientsKeys = Object.keys(recipeData).filter((item) =>
@@ -45,14 +38,7 @@ function RecipeDirections({
           src={recipeData.strMealThumb}
           alt="Thumbnail"
         ></img>
-        <Macros
-          name={recipeData.strMeal}
-          setBreakfast={setBreakfast}
-          setCalories={setCalories}
-          setLunch={setLunch}
-          setDinner={setDinner}
-          setSnack={setSnack}
-        />
+        <Macros name={recipeData.strMeal} />
         <h3 className="recipe-directions__ingredients-title">Ingredients</h3>
         <div className="recipe-directions__ingredients-container">
           <div className="recipe-directions__ingredients-content">

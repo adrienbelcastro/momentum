@@ -6,7 +6,7 @@ import { searchById } from "../../../utils";
 import { useParams } from "react-router-dom";
 import RecipeDirections from "../../../Components/recipes-individual/RecipeDirections";
 
-function RecipePage(setBreakfast, setCalories, setLunch, setDinner, setSnack) {
+function RecipePage() {
   const [recipesData, setRecipesData] = useState();
   const recipeId = useParams();
 
@@ -27,14 +27,7 @@ function RecipePage(setBreakfast, setCalories, setLunch, setDinner, setSnack) {
     return (
       <>
         <Header />
-        <RecipeDirections
-          data={recipesData}
-          setBreakfast={setBreakfast}
-          setCalories={setCalories}
-          setLunch={setLunch}
-          setDinner={setDinner}
-          setSnack={setSnack}
-        />
+        <RecipeDirections data={recipesData} />
         <Footer />
       </>
     );
