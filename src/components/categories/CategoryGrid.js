@@ -15,13 +15,12 @@ function CategoryGrid(details) {
       <div className="category-list__container">
         {categoryList.map((categoryList) => (
           <Link
-            to={`/${categoryList.strCategory}`}
             key={categoryList.idCategory}
+            to={`/${categoryList.strCategory}`}
           >
             <CategoryCard
               title={categoryList.strCategory}
               thumbnail={categoryList.strCategoryThumb}
-              id={categoryList.idCategory}
             />
           </Link>
         ))}
