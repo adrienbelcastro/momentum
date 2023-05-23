@@ -4,7 +4,7 @@ import { elastic as Menu } from "react-burger-menu";
 
 import "./Sidebar.scss";
 
-export default (Sidebar) => {
+function Sidebar() {
   return (
     <Menu
       burgerButtonClassName={"sidebar__burger-btn"}
@@ -30,7 +30,9 @@ export default (Sidebar) => {
       <a href="/login" className="sidebar__links">
         Login
       </a>
-      <img src={logo} className="sidebar__logo"></img>
+      <img src={logo} alt="siedbar logo" className="sidebar__logo"></img>
     </Menu>
   );
-};
+}
+
+export default Sidebar;

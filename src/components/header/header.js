@@ -16,7 +16,11 @@ const Header = (data) => {
             <img className="header__logo" src={logo} alt="Mobile Logo"></img>
           </Link>
           <Link to="/">
-            <img src={logo} className="header__desktop-logo"></img>
+            <img
+              src={logo}
+              alt="desktop logo"
+              className="header__desktop-logo"
+            ></img>
           </Link>
 
           <a href="/planner" className="header__desktop-ingredients">

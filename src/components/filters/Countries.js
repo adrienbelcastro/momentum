@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import RecipeCard from "../recipecard/RecipeCard";
 import "./Countries.scss";
 
 function Countries(data) {
