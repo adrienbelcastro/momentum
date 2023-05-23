@@ -9,7 +9,7 @@ function CategoryGrid(details) {
   return (
     <section className="category-list">
       <button className="category-list__button">
-        <AiOutlineArrowRight className="" />
+        <AiOutlineArrowRight className="arrow" />
       </button>
       <h1 className="category-list__title">DINE BY CATEGORIES</h1>
       <div className="category-list__container">
@@ -19,7 +19,6 @@ function CategoryGrid(details) {
             to={`/${categoryList.strCategory}`}
           >
             <CategoryCard
-              key={categoryList.idCategory}
               title={categoryList.strCategory}
               thumbnail={categoryList.strCategoryThumb}
             />

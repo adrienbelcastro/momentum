@@ -9,15 +9,14 @@ function Countries(data) {
     <section className="countries">
       <div className="countries__flex">
         <Link to={`/`}>
-          <div className="recipe-directions__back-arrow">
-            <AiOutlineArrowLeft className="" />
+          <div className="countries__arrow-container">
+            <AiOutlineArrowLeft className="arrow" />
           </div>
         </Link>
-        <h1 className="countries__title">Search By Countries</h1>
       </div>
       <div className="countries__container">
-        {countryData.map((countryData) => (
-          <Link to={`${countryData.strArea}`}>
+        {countryData.map((countryData, index) => (
+          <Link to={`${countryData.strArea}`} key={index}>
             <h4 className="countries__country">{countryData.strArea}</h4>
           </Link>
         ))}
