@@ -19,7 +19,7 @@ function CountryResults() {
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, [country.country]);
 
   if (!recipes) {
     return "Loading";

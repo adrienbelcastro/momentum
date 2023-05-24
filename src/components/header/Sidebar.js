@@ -1,10 +1,10 @@
 import React from "react";
 import logo from "../../assets/images/loading-video.png";
 import { elastic as Menu } from "react-burger-menu";
-
 import "./Sidebar.scss";
 
-const Sidebar = () => {
+function Sidebar() {
+
   return (
     <Menu
       burgerButtonClassName={"sidebar__burger-btn"}
@@ -30,9 +30,11 @@ const Sidebar = () => {
       <a href="/login" className="sidebar__links">
         Login
       </a>
+
       <img src={logo} alt="Logo" className="sidebar__logo"></img>
     </Menu>
   );
 };
+
 
 export default Sidebar;
