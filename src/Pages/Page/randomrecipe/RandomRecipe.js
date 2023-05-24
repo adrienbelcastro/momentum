@@ -1,9 +1,9 @@
 import { randomMealUrl } from "../../../utils";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Header from "../../../Components/header/header";
-import Footer from "../../../Components/footer/footer";
-import RecipeDirections from "../../../Components/recipes-individual/RecipeDirections";
+import Header from "../../../components/header/header";
+import Footer from "../../../components/footer/footer";
+import RecipeDirections from "../../../components/recipes-individual/RecipeDirections";
 
 function RandomRecipe() {
   const [randomRecipe, setRandomRecipe] = useState();

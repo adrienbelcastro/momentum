@@ -1,11 +1,11 @@
-import Header from "../../../Components/header/header";
-import Footer from "../../../Components/footer/footer";
+import Header from "../../../components/header/header";
+import Footer from "../../../components/footer/footer";
 
 import axios from "axios";
 import { searchByCategory } from "../../../utils";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import RecipesList from "../../../Components/recipesList/RecipesList";
+import RecipesList from "../../../components/recipesList/RecipesList";
 import "./CategoriesPage.scss";
 
 function CategoriesPage() {

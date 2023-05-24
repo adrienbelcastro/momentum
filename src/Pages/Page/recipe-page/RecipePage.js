@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Header from "../../../Components/header/header";
-import Footer from "../../../Components/footer/footer";
+import Header from "../../../components/header/header";
+import Footer from "../../../components/footer/footer";
 import { searchById } from "../../../utils";
 import { useParams } from "react-router-dom";
-import RecipeDirections from "../../../Components/recipes-individual/RecipeDirections";
+import RecipeDirections from "../../../components/recipes-individual/RecipeDirections";
 
 function RecipePage() {
   const [recipesData, setRecipesData] = useState();

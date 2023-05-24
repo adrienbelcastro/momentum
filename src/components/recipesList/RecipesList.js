@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import RecipeCard from "../recipecard/RecipeCard";
+import RecipeCard from "../recipeCard/RecipeCard";
 import "./RecipesList.scss";
 
 function RecipesList(data) {

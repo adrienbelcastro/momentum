@@ -1,10 +1,10 @@
 import { mealsByCountryUrl } from "../../../utils";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Header from "../../../Components/header/header";
-import Footer from "../../../Components/footer/footer";
+import Header from "../../../components/header/header";
+import Footer from "../../../components/footer/footer";
 import { useParams } from "react-router-dom";
-import RecipeList from "../../../Components/recipesList/RecipesList";
+import RecipeList from "../../../components/recipesList/RecipesList";
 
 function CountryResults() {
   const [recipes, setRecipes] = useState();

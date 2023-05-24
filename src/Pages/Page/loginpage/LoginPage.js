@@ -1,5 +1,5 @@
 import "../signuppage/SignUp.scss";
-import Login from "../../../Components/login/Login";
+import Login from "../../../components/login/Login";
 
 export default function SignUpPage() {
   return (
