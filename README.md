@@ -73,4 +73,4 @@ This also requires the user to run npm i in order to install all of the dependen
 
 To start up development server as mentioned above, please use npm start in order to view the project
 
-This is a mobile app and is currently not 100% responsive. However, a desktop and tablet screen size is in beta so styles will be 100% responsive as of phase 2.
+This is a mobile app and is currently not 100% responsive. In its current state it is optimized for a screen with 320px at 100% zoom. However, a desktop and tablet screen size is in beta so styles will be 100% responsive as of phase 2.

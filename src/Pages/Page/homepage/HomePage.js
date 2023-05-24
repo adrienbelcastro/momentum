@@ -1,7 +1,7 @@
-import Header from "../../../Components/header/header";
-import Footer from "../../../Components/footer/footer";
-import CategoryGrid from "../../../Components/categories/CategoryGrid";
-import Hero from "../../../Components/hero/Hero";
+import Header from "../../../components/header/header";
+import Footer from "../../../components/footer/footer";
+import CategoryGrid from "../../../components/categories/CategoryGrid";
+import Hero from "../../../components/hero/Hero";
 import axios from "axios";
 import { categoryApiUrl } from "../../../utils";
 import { useEffect, useState } from "react";

@@ -1,9 +1,9 @@
 import { countrySearchUrl } from "../../../utils";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Header from "../../../Components/header/header";
-import Footer from "../../../Components/footer/footer";
-import Countries from "../../../Components/filters/Countries";
+import Header from "../../../components/header/header";
+import Footer from "../../../components/footer/footer";
+import Countries from "../../../components/filters/Countries";
 
 function CountryResults() {
   const [country, setCountry] = useState();
