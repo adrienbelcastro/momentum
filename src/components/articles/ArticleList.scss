@@ -1,0 +1,23 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.article-list {
+  margin: 0 1rem;
+  background-color: $off-white;
+  border-radius: 5px;
+
+  &__title {
+    padding: 1rem;
+    font-size: 28px;
+  }
+
+  &__author {
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &__thumbnail {
+    width: 18rem;
+    height: 18rem;
+  }
+}
