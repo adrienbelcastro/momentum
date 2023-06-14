@@ -14,6 +14,10 @@
 
   &__container {
     padding: 1rem 0;
+
+    @include desktop {
+      padding: 3rem 0;
+    }
   }
 
   &__photo {
@@ -29,17 +33,29 @@
 
   &__title {
     padding-bottom: 1rem;
+
+    @include desktop {
+      font-size: $desktop-title;
+    }
   }
 
   &__author {
     padding-bottom: 0.25rem;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid $gold;
 
     font-size: $mobile-body;
     font-weight: 100;
+
+    @include desktop {
+      font-size: $desktop-body;
+    }
   }
 
   &__content {
     text-align: justify;
+
+    @include desktop {
+      font-size: $desktop-body;
+    }
   }
 }
