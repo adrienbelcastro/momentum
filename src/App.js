@@ -8,6 +8,8 @@ import SearchByCountry from "./Pages/Page/filterbycountry/SearchByCountry";
 import LoginPage from "./Pages/Page/loginpage/LoginPage";
 import CountryMeals from "./Pages/Page/countrymeals/CountryMeals";
 import RandomRecipe from "./Pages/Page/randomrecipe/RandomRecipe";
+import MealPlanner from "./Pages/Page/mealplanner/MealPlanner";
+import Article from "./Pages/Page/articlepage/Article";
 
 function App() {
   return (
@@ -21,8 +23,10 @@ function App() {
           <Route path="/:categories" element={<CategoryPage />} />
           <Route path=":categories/:id" element={<RecipePage />} />
           <Route path="/random" element={<RandomRecipe />} />
+          <Route path="/planner" element={<MealPlanner />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/article" element={<Article />} />
         </Routes>
       </BrowserRouter>
     </>
