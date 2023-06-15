@@ -53,6 +53,9 @@
 
   &__content {
     text-align: justify;
+    line-height: 2;
+
+    padding-bottom: 1rem;
 
     @include desktop {
       font-size: $desktop-body;
