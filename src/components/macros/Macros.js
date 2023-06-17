@@ -48,6 +48,17 @@ function Macros({ name }) {
             Protein: {nutrients.macros.protein}g
           </h4>
         </div>
+        <form className="macros__form-container">
+          <select>
+            <option>Breakfast</option>
+            <option>Lunch</option>
+            <option>Dinner</option>
+            <option>Snack</option>
+          </select>
+          <button className="macros__button" type="submit">
+            Add To Planner +
+          </button>
+        </form>
       </div>
     );
   }
