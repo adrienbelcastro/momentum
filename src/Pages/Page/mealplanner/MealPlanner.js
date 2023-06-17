@@ -1,11 +1,11 @@
 import Header from "../../../components/header/header";
 import Footer from "../../../components/footer/footer";
 import "./MealPlanner.scss";
-// import Diary from "../../../components/diary/Diary";
+import Diary from "../../../components/diary/Diary";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { nutritionDatabaseURL } from "../../../utils";
-import loadingVideo from "../../../assets/videos/loading-video.mp4";
+import Loading from "../../../components/loading/Loading";
 
 function MealPlanner() {
   const [planner, setPlanner] = useState();
@@ -14,7 +14,6 @@ function MealPlanner() {
     axios
       .get(`${nutritionDatabaseURL}`)
       .then((result) => {
-        console.log(result.data);
         setPlanner(result.data);
       })
       .catch((error) => {
@@ -22,15 +21,10 @@ function MealPlanner() {
       });
   }, []);
 
+  const mealTypes = ["Breakfast", "Lunch", "Dinner", "Snack"];
+
   if (!planner) {
-    return (
-      <>
-        <video className="loading__video" autoPlay="autoplay" muted loop>
-          <source src={loadingVideo} type="video/mp4" />
-        </video>
-        <div>"Loading"</div>
-      </>
-    );
+    return <Loading />;
   } else {
     return (
       <>
@@ -39,34 +33,16 @@ function MealPlanner() {
           <div className="planner__tracker">
             <h1 className="planner__total-calories">{} Calories</h1>
           </div>
-          {planner.map((meal, index) => {
-            if (meal.meal_type === "breakfast") {
-              return (
-                <div key={index} className="planner__container">
-                  <h1>Breakfast</h1>
-                  {/* <Diary meal={planner} /> */}
-                </div>
-              );
-            }
-          })}
-          {/* {planner.lunch.map((meal, index) => (
-          <div key={index} className="planner__container">
-            <h1>Lunch</h1>
-            <Diary meal={meal} />
-          </div>
-        ))}
-        {planner.dinner.map((meal, index) => (
-          <div key={index} className="planner__container">
-            <h1>Dinner</h1>
-            <Diary meal={meal} />
-          </div>
-        ))}
-        {planner.snack.map((meal, index) => (
-          <div key={index} className="planner__container">
-            <h1>Snack</h1>
-            <Diary meal={meal} />
-          </div>
-        ))} */}
+          {mealTypes.map((category, index) => (
+            <div key={index} className="planner__container">
+              <h1 className="planner__title">{category}</h1>
+              {planner
+                .filter((meal) => meal.meal_type === category)
+                .map((meal) => (
+                  <Diary meal={meal} />
+                ))}
+            </div>
+          ))}
         </section>
         <Footer />
       </>
