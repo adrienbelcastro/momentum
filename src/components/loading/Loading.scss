@@ -2,10 +2,10 @@
 @import "../../styles/partials/variables.scss";
 
 .loading {
+  padding-bottom: 1rem;
   &__video-flex {
     display: flex;
     justify-content: center;
-    padding-left: 4rem;
 
     @include tablet {
       padding-left: 0;
@@ -17,9 +17,20 @@
     }
   }
 
+  &__video {
+    width: 100%;
+
+    @include tablet {
+      max-width: 500px;
+    }
+
+    @include desktop {
+      max-width: 800px;
+    }
+  }
+
   &__message {
-    padding-top: 2rem;
-    padding-left: 4rem;
+    padding-left: 1rem;
     text-align: center;
     font-size: $mobile-page-header;
     font-weight: 700;
