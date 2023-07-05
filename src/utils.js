@@ -28,4 +28,4 @@ export const nutritionApiUrl =
 export const nutritionApiKey =
   "&app_id=62f5ffa9&app_key=37a095815028f64f00a7e0f38f6c0c94";
 
-export const nutritionDatabaseURL = "http://localhost:8080/meals";
+export const nutritionDatabaseURL = "http://localhost:8080/";
