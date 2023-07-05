@@ -1,0 +1,24 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.article-card {
+  margin: 1.5rem 1rem;
+  background-color: $off-white;
+  border-radius: 5px;
+  max-width: 300px;
+
+  &__title {
+    padding: 1rem;
+    font-size: 28px;
+  }
+
+  &__author {
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &__thumbnail {
+    width: 100%;
+    height: 18rem;
+  }
+}

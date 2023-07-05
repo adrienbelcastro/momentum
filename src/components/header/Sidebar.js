@@ -4,7 +4,6 @@ import { elastic as Menu } from "react-burger-menu";
 import "./Sidebar.scss";
 
 function Sidebar() {
-
   return (
     <Menu
       burgerButtonClassName={"sidebar__burger-btn"}
@@ -21,6 +20,10 @@ function Sidebar() {
         HomePage
       </a>
 
+      <a href="/planner" className="sidebar__links">
+        Meal Planner
+      </a>
+
       <a href="/country" className="sidebar__links">
         Countries
       </a>
@@ -34,7 +37,6 @@ function Sidebar() {
       <img src={logo} alt="Logo" className="sidebar__logo"></img>
     </Menu>
   );
-};
-
+}
 
 export default Sidebar;

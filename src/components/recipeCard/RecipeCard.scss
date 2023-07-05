@@ -19,6 +19,9 @@
 
       border: 1px solid $shadow;
       padding: 0;
+      &:hover {
+        @include hover;
+      }
     }
   }
 

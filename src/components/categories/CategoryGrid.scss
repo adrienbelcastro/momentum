@@ -15,8 +15,8 @@
     height: 50px;
 
     position: absolute;
-    right: 3.25rem;
-    bottom: -14.6rem;
+    right: 1.25rem;
+    bottom: -19.6rem;
 
     border: none;
     border-radius: 50px;
@@ -26,7 +26,7 @@
     @include tablet {
       position: absolute;
       right: 5.35rem;
-      bottom: -17.15rem;
+      bottom: -21.75rem;
     }
 
     @include desktop {

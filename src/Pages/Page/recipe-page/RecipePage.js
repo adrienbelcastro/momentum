@@ -5,6 +5,7 @@ import Footer from "../../../components/footer/footer";
 import { searchById } from "../../../utils";
 import { useParams } from "react-router-dom";
 import RecipeDirections from "../../../components/recipes-individual/RecipeDirections";
+import Loading from "../../../components/loading/Loading";
 
 function RecipePage() {
   const [recipesData, setRecipesData] = useState();
@@ -22,7 +23,7 @@ function RecipePage() {
   }, [recipeId]);
 
   if (!recipesData) {
-    return "Loading";
+    return <Loading />;
   } else {
     return (
       <>

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Header from "../../../components/header/header";
 import Footer from "../../../components/footer/footer";
 import Countries from "../../../components/filters/Countries";
+import Loading from "../../../components/loading/Loading";
 
 function CountryResults() {
   const [country, setCountry] = useState();
@@ -20,7 +21,7 @@ function CountryResults() {
   }, []);
 
   if (!country) {
-    return "Loading";
+    return <Loading />;
   } else {
     return (
       <>
