@@ -1,40 +1,60 @@
-import React from "react";
-import image from "../../../assets/images/signup-background.jpg";
+import axios from "axios";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import Loading from "../../../components/loading/Loading";
 import Footer from "../../../components/footer/footer";
 import Header from "../../../components/header/header";
-
+import { nutritionDatabaseURL } from "../../../utils";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 import "../articlepage/Article.scss";
 
 export default function Article() {
-  return (
-    <div className="article">
-      <Header />
-      <div>
-        <img className="article__photo" src={image} alt="Article Thumbnail" />
-        <div className="article__container">
-          <h1 className="article__title">Lorem Ipsum All Day</h1>
-          <h3 className="article__author">By: Bob The Builder</h3>
+  const [articleData, setArticleData] = useState();
+  const articleId = useParams();
+
+  useEffect(() => {
+    axios
+      .get(`${nutritionDatabaseURL}article/${articleId.id}`)
+      .then((result) => {
+        setArticleData(result.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, [articleId]);
+
+  if (!articleData) {
+    return <Loading />;
+  } else {
+    const content = articleData[0].content.split("\n");
+    return (
+      <div className="article">
+        <Header />
+        <div>
+          <Link to={`/`}>
+            <div>
+              <AiOutlineArrowLeft className="arrow" />
+            </div>
+          </Link>
+          <img
+            className="article__photo"
+            src={articleData[0].image}
+            alt="Article Thumbnail"
+          />
+          <div className="article__container">
+            <h1 className="article__title">{articleData[0].title}</h1>
+            <h3 className="article__author">{articleData[0].author}</h3>
+          </div>
+          <p className="article__content">{articleData[0].introduction}</p>
+          {content.map((content, index) => (
+            <div key={index} className="article__content">
+              {content}
+            </div>
+          ))}
         </div>
-        <p className="article__content">
-          Contrary to popular belief, Lorem Ipsum is not simply random text. It
-          has roots in a piece of classical Latin literature from 45 BC, making
-          it over 2000 years old. Richard McClintock, a Latin professor at
-          Hampden-Sydney College in Virginia, looked up one of the more obscure
-          Latin words, consectetur, from a Lorem Ipsum passage, and going
-          through the cites of the word in classical literature, discovered the
-          undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
-          1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and
-          Evil) by Cicero, written in 45 BC. This book is a treatise on the
-          theory of ethics, very popular during the Renaissance. The first line
-          of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
-          section 1.10.32. The standard chunk of Lorem Ipsum used since the
-          1500s is reproduced below for those interested. Sections 1.10.32 and
-          1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
-          reproduced in their exact original form, accompanied by English
-          versions from the 1914 translation by H. Rackham.
-        </p>
+        <Footer />
       </div>
-      <Footer />
-    </div>
-  );
+    );
+  }
 }
