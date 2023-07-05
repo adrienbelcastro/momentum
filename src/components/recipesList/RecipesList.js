@@ -1,31 +1,36 @@
 import { Link } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import Loading from "../loading/Loading";
 import RecipeCard from "../recipeCard/RecipeCard";
 import "./RecipesList.scss";
 
 function RecipesList(data) {
   const recipeData = data.data.meals;
 
-  return (
-    <section className="recipe-list">
-      <Link to={`/country`}>
-        <div className="recipe-directions__back-arrow">
-          <AiOutlineArrowLeft className="arrow" />
+  if (!recipeData) {
+    return <Loading />;
+  } else {
+    return (
+      <section className="recipe-list">
+        <Link to={`/country`}>
+          <div className="recipe-directions__back-arrow">
+            <AiOutlineArrowLeft className="arrow" />
+          </div>
+        </Link>
+        <div className="recipe-list__container">
+          {recipeData.map((recipeData) => (
+            <Link to={`${recipeData.idMeal}`} key={recipeData.idMeal}>
+              <RecipeCard
+                title={recipeData.strMeal}
+                thumbnail={recipeData.strMealThumb}
+                id={recipeData.idMeal}
+              />
+            </Link>
+          ))}
         </div>
-      </Link>
-      <div className="recipe-list__container">
-        {recipeData.map((recipeData) => (
-          <Link to={`${recipeData.idMeal}`} key={recipeData.idMeal}>
-            <RecipeCard
-              title={recipeData.strMeal}
-              thumbnail={recipeData.strMealThumb}
-              id={recipeData.idMeal}
-            />
-          </Link>
-        ))}
-      </div>
-    </section>
-  );
+      </section>
+    );
+  }
 }
 
 export default RecipesList;

@@ -1,0 +1,39 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.article-list {
+  @include desktop {
+    margin: 2rem 5.5rem;
+  }
+  &__title {
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+
+    @include tablet {
+      text-align: center;
+      border-bottom: 1px solid $gold;
+    }
+
+    @include desktop {
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid $gold;
+      padding-bottom: 1rem;
+    }
+  }
+  &__container {
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 300px);
+      column-gap: 2rem;
+      margin: 2rem 4rem;
+    }
+
+    @include desktop {
+      display: grid;
+      grid-template-columns: repeat(2, 450px);
+      column-gap: 2rem;
+      margin: 2rem 9rem;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.diary {
+  &__recipe-title {
+    padding: 0.5rem 0;
+  }
+  &__macros {
+    display: flex;
+
+    justify-content: center;
+    gap: 1rem;
+
+    @include tablet {
+      flex-wrap: none;
+      justify-content: flex-end;
+      padding: 0;
+    }
+
+    @include desktop {
+      justify-content: flex-end;
+    }
+  }
+}

@@ -25,6 +25,13 @@
     align-items: center;
   }
 
+  &__protein,
+  &__carbs,
+  &__fats,
+  &__calories {
+    font-size: 13px;
+  }
+
   &__button,
   &__select {
     border: none;
@@ -37,5 +44,8 @@
     display: flex;
     gap: 1rem;
     align-items: center;
+    justify-content: center;
+
+    padding-bottom: 1rem;
   }
 }

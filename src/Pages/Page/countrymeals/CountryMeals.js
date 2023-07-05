@@ -5,6 +5,7 @@ import Header from "../../../components/header/header";
 import Footer from "../../../components/footer/footer";
 import { useParams } from "react-router-dom";
 import RecipeList from "../../../components/recipesList/RecipesList";
+import Loading from "../../../components/loading/Loading";
 
 function CountryResults() {
   const [recipes, setRecipes] = useState();
@@ -22,7 +23,7 @@ function CountryResults() {
   }, [country.country]);
 
   if (!recipes) {
-    return "Loading";
+    return <Loading />;
   } else {
     return (
       <>

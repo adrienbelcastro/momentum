@@ -5,6 +5,9 @@ import Hero from "../../../components/hero/Hero";
 import axios from "axios";
 import { categoryApiUrl } from "../../../utils";
 import { useEffect, useState } from "react";
+import ArticleList from "../../../components/articles/ArticleList";
+import "../homepage/HomePage.scss";
+import Loading from "../../../components/loading/Loading";
 
 function HomePage() {
   const [categories, setCategories] = useState();
@@ -21,13 +24,18 @@ function HomePage() {
   }, []);
 
   if (!categories) {
-    return "Loading";
+    return (
+      <>
+        <Loading />
+      </>
+    );
   } else {
     return (
       <>
         <Header />
         <Hero />
         <CategoryGrid categories={categories} />
+        <ArticleList />
         <Footer />
       </>
     );
