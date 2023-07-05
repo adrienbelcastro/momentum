@@ -7,10 +7,9 @@
   }
   &__macros {
     display: flex;
-    flex-wrap: wrap;
+
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0 2rem;
+    gap: 1rem;
 
     @include tablet {
       flex-wrap: none;
