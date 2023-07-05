@@ -12,7 +12,7 @@ function MealPlanner() {
 
   useEffect(() => {
     axios
-      .get(`${nutritionDatabaseURL}`)
+      .get(`${nutritionDatabaseURL}meals`)
       .then((result) => {
         setPlanner(result.data);
       })
@@ -21,25 +21,76 @@ function MealPlanner() {
       });
   }, []);
 
+  console.log(planner);
+
+  const handleDelete = (recipeId) => {
+    axios
+      .delete(`${nutritionDatabaseURL}meals/${recipeId}`)
+      .then((result) => {
+        console.log(result);
+        setPlanner((prevPlanner) =>
+          prevPlanner.filter((meal) => meal.recipe_id !== recipeId)
+        );
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   const mealTypes = ["Breakfast", "Lunch", "Dinner", "Snack"];
 
   if (!planner) {
     return <Loading />;
   } else {
+    const totalCalories = planner.reduce(
+      (total, meal) => total + meal.calories,
+      0
+    );
+
+    const totalProtein = planner.reduce(
+      (total, meal) => total + meal.protein,
+      0
+    );
+
+    const totalFats = planner.reduce((total, meal) => total + meal.fats, 0);
+
+    const totalCarbs = planner.reduce(
+      (total, meal) => total + meal.carbohydrates,
+      0
+    );
+
     return (
       <>
         <Header />
         <section className="planner">
           <div className="planner__tracker">
-            <h1 className="planner__total-calories">{} Calories</h1>
+            <h1 className="planner__total-calories">
+              {totalCalories} Calories
+            </h1>
+            <div className="planner__macros-flex">
+              <h3 className="planner__total-calories">
+                Protein: {totalProtein} g
+              </h3>
+              <h3 className="planner__total-calories">Fats: {totalFats} g</h3>
+              <h3 className="planner__total-calories">Carbs: {totalCarbs} g</h3>
+            </div>
           </div>
+
           {mealTypes.map((category, index) => (
             <div key={index} className="planner__container">
               <h1 className="planner__title">{category}</h1>
               {planner
                 .filter((meal) => meal.meal_type === category)
                 .map((meal) => (
-                  <Diary meal={meal} />
+                  <>
+                    <button
+                      onClick={() => handleDelete(meal.recipe_id)}
+                      className="planner__delete"
+                    >
+                      ❌
+                    </button>
+                    <Diary meal={meal} />
+                  </>
                 ))}
             </div>
           ))}
