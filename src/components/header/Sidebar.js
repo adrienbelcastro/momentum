@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/images/loading-video.png";
+import logo from "../../assets/images/logo.png";
 import { elastic as Menu } from "react-burger-menu";
 import "./Sidebar.scss";
 

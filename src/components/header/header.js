@@ -1,6 +1,6 @@
 import Sidebar from "./Sidebar";
 import { AvatarGenerator } from "random-avatar-generator";
-import logo from "../../assets/images/loading-video.png";
+import logo from "../../assets/images/logo.png";
 import "./header.scss";
 import { Link } from "react-router-dom";
 
