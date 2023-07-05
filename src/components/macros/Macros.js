@@ -2,12 +2,20 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./Macros.scss";
 import axios from "axios";
-import { nutritionApiKey, nutritionApiUrl } from "../../utils";
+import {
+  nutritionApiKey,
+  nutritionApiUrl,
+  nutritionDatabaseURL,
+} from "../../utils";
+import Loading from "../loading/Loading";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Macros({ name }) {
   const recipeName = name;
   const [nutritionInfo, setNutritionInfo] = useState();
   const [nutrients, setNutrients] = useState({});
+  const [category, setCategory] = useState("breakfast");
 
   useEffect(() => {
     axios
@@ -30,8 +38,31 @@ function Macros({ name }) {
       });
   }, [recipeName]);
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    axios
+      .post(`${nutritionDatabaseURL}`, {
+        name: recipeName,
+        meal_type: category,
+        calories: nutrients.macros.calories,
+        carbohydrates: nutrients.macros.carbs,
+        fats: nutrients.macros.fat,
+        protein: nutrients.macros.protein,
+      })
+      .then((result) => {
+        console.log(result.data);
+        if (result.status === 200) {
+          toast("Recipe Added to Planner");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   if (!nutritionInfo) {
-    return "Loading";
+    return <Loading />;
   } else {
     return (
       <div className="macros">
@@ -48,16 +79,26 @@ function Macros({ name }) {
             Protein: {nutrients.macros.protein}g
           </h4>
         </div>
-        <form className="macros__form-container">
-          <select>
+        <form onSubmit={handleSubmit} className="macros__form-container">
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            className="macros__select"
+          >
             <option>Breakfast</option>
             <option>Lunch</option>
             <option>Dinner</option>
             <option>Snack</option>
           </select>
-          <button className="macros__button" type="submit">
-            Add To Planner +
-          </button>
+          <div>
+            <button
+              className="macros__button"
+              type="submit"
+              onClick={handleSubmit}
+            >
+              Add To Planner +
+            </button>
+          </div>
         </form>
       </div>
     );
