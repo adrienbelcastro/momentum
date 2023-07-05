@@ -3,23 +3,48 @@
 
 .planner {
   margin: 1rem;
-  @include desktop {
-    margin: 2rem;
+
+  @include tablet {
+    margin: 1rem 3rem;
   }
+  @include desktop {
+    margin: 2rem 5rem;
+  }
+
+  &__date-flex {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+  }
+
+  &__macros-flex {
+    display: flex;
+    justify-content: center;
+  }
+
   &__tracker {
     background-color: $off-white;
     box-shadow: $box-shadow;
   }
 
+  &__delete {
+    position: absolute;
+    border: none;
+    background: none;
+    right: 2rem;
+
+    @include tablet {
+      right: 4rem;
+    }
+
+    @include desktop {
+      right: 3rem;
+    }
+  }
+
   &__total-calories {
     padding: 1rem;
     text-align: center;
-    @include tablet {
-      padding: 3rem;
-    }
-    @include desktop {
-      padding: 5rem;
-    }
   }
 
   &__container {
