@@ -35,7 +35,6 @@ function HomePage() {
         <Header />
         <Hero />
         <CategoryGrid categories={categories} />
-        <h1 className="homepage__list-title">Popular Articles</h1>
         <ArticleList />
         <Footer />
       </>
