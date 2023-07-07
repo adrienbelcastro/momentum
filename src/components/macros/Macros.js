@@ -15,7 +15,7 @@ function Macros({ name }) {
   const recipeName = name;
   const [nutritionInfo, setNutritionInfo] = useState();
   const [nutrients, setNutrients] = useState({});
-  const [category, setCategory] = useState("breakfast");
+  const [category, setCategory] = useState("Breakfast");
 
   useEffect(() => {
     axios
