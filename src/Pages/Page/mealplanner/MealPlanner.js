@@ -21,8 +21,6 @@ function MealPlanner() {
       });
   }, []);
 
-  console.log(planner);
-
   const handleDelete = (recipeId) => {
     axios
       .delete(`${nutritionDatabaseURL}meals/${recipeId}`)
