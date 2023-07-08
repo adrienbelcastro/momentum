@@ -75,7 +75,7 @@ function MealPlanner() {
           </div>
 
           {mealTypes.map((category, index) => (
-            <div key={index} className="planner__container">
+            <div className="planner__container" key={index}>
               <h1 className="planner__title">{category}</h1>
               {planner
                 .filter((meal) => meal.meal_type === category)
