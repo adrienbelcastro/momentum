@@ -51,9 +51,8 @@ function Macros({ name }) {
         protein: nutrients.macros.protein,
       })
       .then((result) => {
-        console.log(result.data);
-        if (result.status === 200) {
-          toast("Recipe Added to Planner");
+        if (result.status === 201) {
+          toast("Recipe Added To Planner");
         }
       })
       .catch((error) => {
@@ -100,6 +99,7 @@ function Macros({ name }) {
             </button>
           </div>
         </form>
+        <ToastContainer />
       </div>
     );
   }

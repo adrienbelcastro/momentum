@@ -2,7 +2,6 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import "./RecipeDirections.scss";
 import Macros from "../macros/Macros";
-
 import React from "react";
 
 function RecipeDirections({ data }) {
