@@ -29,6 +29,9 @@ const Header = (data) => {
           <a href="/country" className="header__desktop-countries">
             Countries
           </a>
+          <a href="/goals" className="header__desktop-random-recipe">
+            Goals
+          </a>
           <a href="/random" className="header__desktop-random-recipe">
             Random Recipe
           </a>
