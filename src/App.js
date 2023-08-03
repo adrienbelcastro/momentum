@@ -10,6 +10,7 @@ import CountryMeals from "./Pages/Page/countrymeals/CountryMeals";
 import RandomRecipe from "./Pages/Page/randomrecipe/RandomRecipe";
 import MealPlanner from "./Pages/Page/mealplanner/MealPlanner";
 import Article from "./Pages/Page/articlepage/Article";
+import Goals from "./Pages/Page/goals/Goals";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/planner" element={<MealPlanner />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/goals" element={<Goals />} />
           <Route path="/article/:id" element={<Article />} />
         </Routes>
       </BrowserRouter>
