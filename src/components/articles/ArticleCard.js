@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../../assets/images/signup-background.jpg";
+
 import "../articles/ArticleCard.scss";
 
 export default function ArticleCard(data) {
