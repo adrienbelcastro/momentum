@@ -5,6 +5,7 @@ import HomePage from "./Pages/Page/homepage/HomePage";
 import CategoryPage from "./Pages/Page/categorypage/CategoriesPage";
 import RecipePage from "./Pages/Page/recipe-page/RecipePage";
 import SearchByCountry from "./Pages/Page/filterbycountry/SearchByCountry";
+import AccountInfo from "./Pages/Page/accountinfo/AccountInfo";
 import LoginPage from "./Pages/Page/loginpage/LoginPage";
 import CountryMeals from "./Pages/Page/countrymeals/CountryMeals";
 import RandomRecipe from "./Pages/Page/randomrecipe/RandomRecipe";
@@ -28,6 +29,7 @@ function App() {
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/goals" element={<Goals />} />
+          <Route path="/account" element={<AccountInfo />} />
           <Route path="/article/:id" element={<Article />} />
         </Routes>
       </BrowserRouter>
