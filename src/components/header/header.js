@@ -37,7 +37,13 @@ const Header = (data) => {
           </a>
         </ul>
         <ul className="header__nav">
-          <img className="header__profile" src={profilePic} alt="Profile"></img>
+          <Link to="/account">
+            <img
+              className="header__profile"
+              src={profilePic}
+              alt="Profile"
+            ></img>
+          </Link>
           <Link to="/signup">
             <button className="header__desktop-signup">Sign Up</button>
           </Link>
