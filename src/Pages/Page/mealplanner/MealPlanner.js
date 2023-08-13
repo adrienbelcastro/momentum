@@ -76,17 +76,19 @@ function MealPlanner() {
 
           {mealTypes.map((category, index) => (
             <div className="planner__container" key={index}>
-              <h1 className="planner__title">{category}</h1>
               {planner
                 .filter((meal) => meal.meal_type === category)
                 .map((meal) => (
                   <>
-                    <button
-                      onClick={() => handleDelete(meal.recipe_id)}
-                      className="planner__delete"
-                    >
-                      ❌
-                    </button>
+                    <div className="planner__category-flex">
+                      <h1 className="planner__title">{category}</h1>
+                      <button
+                        onClick={() => handleDelete(meal.recipe_id)}
+                        className="planner__delete"
+                      >
+                        ❌
+                      </button>
+                    </div>
                     <Diary meal={meal} />
                   </>
                 ))}
