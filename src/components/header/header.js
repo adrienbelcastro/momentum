@@ -44,9 +44,6 @@ const Header = (data) => {
               alt="Profile"
             ></img>
           </Link>
-          <Link to="/signup">
-            <button className="header__desktop-signup">Sign Up</button>
-          </Link>
           <Link to="/login">
             <button className="header__desktop-signup">Log In</button>
           </Link>
