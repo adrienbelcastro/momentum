@@ -12,6 +12,8 @@ import RandomRecipe from "./Pages/Page/randomrecipe/RandomRecipe";
 import MealPlanner from "./Pages/Page/mealplanner/MealPlanner";
 import Article from "./Pages/Page/articlepage/Article";
 import Goals from "./Pages/Page/goals/Goals";
+import EditGoals from "./Pages/Page/editgoals/EditGoals";
+import NewGoal from "./Pages/Page/newgoal/NewGoal";
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/goals" element={<Goals />} />
+          <Route path="/goals/edit" element={<EditGoals />} />
+          <Route path="/goals/new" element={<NewGoal />} />
           <Route path="/account" element={<AccountInfo />} />
           <Route path="/article/:id" element={<Article />} />
         </Routes>
