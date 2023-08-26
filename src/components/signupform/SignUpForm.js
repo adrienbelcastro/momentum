@@ -1,8 +1,49 @@
 import "./SignUpForm.scss";
 import { Link } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import axios from "axios";
+import { nutritionDatabaseURL } from "../../utils";
+import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 
 const SignUpForm = () => {
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
+  const [email, setEmail] = useState();
+  const [name, setName] = useState();
+  const [phone, setPhone] = useState();
+  const [error, setError] = useState();
+
+  const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+  const phoneRegex = /^\d{10}$/;
+
+  const handleRegister = (event) => {
+    event.preventDefault();
+
+    if (!username || !email || !password) {
+      setError("All fields are required");
+    } else if (!emailRegex.test(email)) {
+      setError("Invalid email format");
+    } else if (!phoneRegex.test(phone)) {
+      setError("Invalid phone number format");
+    } else {
+      axios
+        .post(`${nutritionDatabaseURL}register`, {
+          username,
+          password,
+          email,
+          phone,
+        })
+        .then((response) => {
+          toast("Account Created");
+        })
+        .catch((error) => {
+          console.log(error);
+          console.error("Authentication failed", error);
+          toast("Registration Failed");
+        });
+    }
+  };
   return (
     <div className="form">
       <Link to="/">
@@ -19,8 +60,9 @@ const SignUpForm = () => {
               <input
                 className="form__input"
                 type="text"
-                name="Username"
+                value={username}
                 placeholder="Username"
+                onChange={(e) => setUsername(e.target.value)}
               />
             </label>
 
@@ -28,17 +70,9 @@ const SignUpForm = () => {
               <input
                 className="form__input"
                 type="text"
-                name="Name"
-                placeholder="Name"
-              />
-            </label>
-
-            <label className="form__container">
-              <input
-                className="form__input"
-                type="text"
-                name="Email"
+                value={email}
                 placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </label>
 
@@ -46,20 +80,24 @@ const SignUpForm = () => {
               <input
                 className="form__input"
                 type="text"
-                name="Password"
+                value={password}
                 placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </label>
+
             <label className="form__container">
               <input
                 className="form__input"
                 type="text"
-                name="Password"
-                placeholder="Confirm Password"
+                value={phone}
+                placeholder="Phone Number"
+                onChange={(e) => setPhone(e.target.value)}
               />
             </label>
+            {error && <p style={{ color: "red" }}>{error}</p>}
             <div className="form__btn-container">
-              <button className="form__btn">
+              <button className="form__btn" onClick={handleRegister}>
                 <h4 className="form__btn-title">Create Account</h4>
               </button>
             </div>
@@ -72,6 +110,7 @@ const SignUpForm = () => {
               </p>
             </div>
           </form>
+          <ToastContainer />
         </div>
       </div>
     </div>
