@@ -6,7 +6,6 @@ import Loading from "../../../components/loading/Loading";
 import Footer from "../../../components/footer/footer";
 import Header from "../../../components/header/header";
 import { nutritionDatabaseURL } from "../../../utils";
-import { AiOutlineArrowLeft } from "react-icons/ai";
 import "../articlepage/Article.scss";
 
 export default function Article() {
@@ -31,12 +30,8 @@ export default function Article() {
     return (
       <div className="article">
         <Header />
-        <div>
-          <Link to={`/`}>
-            <div>
-              <AiOutlineArrowLeft className="arrow" />
-            </div>
-          </Link>
+
+        <div className="article__flex">
           <img
             className="article__photo"
             src={articleData[0].image}
