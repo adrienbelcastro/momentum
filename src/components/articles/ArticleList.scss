@@ -2,12 +2,12 @@
 @import "../../styles/partials/variables.scss";
 
 .article-list {
+  margin: 1rem;
   @include desktop {
-    margin: 2rem 5.5rem;
+    margin: 3rem;
   }
   &__title {
     padding-bottom: 1rem;
-    padding-left: 1rem;
 
     @include tablet {
       text-align: center;
@@ -18,22 +18,22 @@
       width: 100%;
       text-align: center;
       border-bottom: 1px solid $gold;
-      padding-bottom: 1rem;
     }
   }
   &__container {
     @include tablet {
+      width: 100%;
       display: grid;
-      grid-template-columns: repeat(2, 300px);
-      column-gap: 2rem;
-      margin: 2rem 4rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      place-items: center;
+      column-gap: 1rem;
     }
 
     @include desktop {
       display: grid;
-      grid-template-columns: repeat(2, 450px);
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
       column-gap: 2rem;
-      margin: 2rem 9rem;
+      place-items: center;
     }
   }
 }
