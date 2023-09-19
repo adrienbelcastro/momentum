@@ -1,5 +1,4 @@
-import "../signupform/SignUpForm.scss";
-import { AiOutlineArrowLeft } from "react-icons/ai";
+import "../authenticationform/AuthenticationForm.scss";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
@@ -26,11 +25,6 @@ const Login = () => {
   return (
     <>
       <div className="form">
-        <Link to="/">
-          <div className="form__back-arrow">
-            <AiOutlineArrowLeft className="" />
-          </div>
-        </Link>
         <h2 className="form__subheader">Login</h2>
         <h4 className="form__tagline">No More Bad Tinder Dates</h4>
         <div>
@@ -64,7 +58,7 @@ const Login = () => {
               <div className="form__login-container">
                 <p className="form__login-prompt">
                   Don't Have An Account?{" "}
-                  <Link className="form__signup-link" to="/signup">
+                  <Link className="form__link" to="/signup">
                     Sign Up{" "}
                   </Link>
                 </p>
