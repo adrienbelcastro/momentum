@@ -1,16 +1,14 @@
-import "./SignUpForm.scss";
+import "./AuthenticationForm.scss";
 import { Link } from "react-router-dom";
-import { AiOutlineArrowLeft } from "react-icons/ai";
 import axios from "axios";
 import { nutritionDatabaseURL } from "../../utils";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 
-const SignUpForm = () => {
+const SignUpForm = ({ setIsLoggedIn }) => {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
   const [email, setEmail] = useState();
-  const [name, setName] = useState();
   const [phone, setPhone] = useState();
   const [error, setError] = useState();
 
@@ -36,6 +34,7 @@ const SignUpForm = () => {
         })
         .then((response) => {
           toast("Account Created");
+          setIsLoggedIn(true);
         })
         .catch((error) => {
           console.log(error);
@@ -46,13 +45,6 @@ const SignUpForm = () => {
   };
   return (
     <div className="form">
-      <Link to="/">
-        <div className="form__back-arrow">
-          <AiOutlineArrowLeft className="" />
-        </div>
-      </Link>
-      <h2 className="form__subheader">Create An Account</h2>
-      <h4 className="form__tagline">No More Boxed Mac And Cheese</h4>
       <div>
         <div>
           <form>
@@ -104,7 +96,7 @@ const SignUpForm = () => {
             <div className="form__login-container">
               <p className="form__login-prompt">
                 Already Have An Account?{" "}
-                <Link className="form__login-link" to="/login">
+                <Link className="form__link" to="/login">
                   Log In{" "}
                 </Link>
               </p>
