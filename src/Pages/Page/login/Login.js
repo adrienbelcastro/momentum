@@ -1,26 +1,31 @@
 import "../../../components/authenticationform/AuthenticationForm.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+
 import axios from "axios";
 import { nutritionDatabaseURL } from "../../../utils";
 import { toast, ToastContainer } from "react-toastify";
 
-const Login = ({ setIsLoggedIn }) => {
+const Login = ({ IsLoggedIn, setIsLoggedIn }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = (event) => {
     event.preventDefault();
+    if (IsLoggedIn) {
+      return <redirect to="/" />;
+    }
     axios
       .post(`${nutritionDatabaseURL}login`, { username, password })
       .then((response) => {
         const { token } = response.data;
-        toast("Authentication Successful");
+        setIsLoggedIn(true);
+        navigate("/");
       })
       .catch((error) => {
         console.error("Authentication failed", error);
         toast("Authentication failed");
-        setIsLoggedIn(true);
       });
   };
   return (
