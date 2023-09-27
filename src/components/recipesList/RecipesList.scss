@@ -8,6 +8,14 @@
     margin: 1rem 4rem;
   }
 
+  &__flex {
+    @include desktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
   &__container {
     @include desktop {
       display: grid;
