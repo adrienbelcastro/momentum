@@ -8,7 +8,7 @@ import Header from "../../../components/header/header";
 import { nutritionDatabaseURL } from "../../../utils";
 import "../articlepage/Article.scss";
 
-export default function Article() {
+export default function Article(isLoggedIn) {
   const [articleData, setArticleData] = useState();
   const articleId = useParams();
 
@@ -29,7 +29,7 @@ export default function Article() {
     const content = articleData[0].content.split("\n");
     return (
       <div className="article">
-        <Header />
+        <Header isLoggedIn={isLoggedIn} />
 
         <div className="article__flex">
           <img
