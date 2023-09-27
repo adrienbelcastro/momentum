@@ -6,35 +6,65 @@ import CategoryPage from "./Pages/Page/categorypage/CategoriesPage";
 import RecipePage from "./Pages/Page/recipe-page/RecipePage";
 import SearchByCountry from "./Pages/Page/filterbycountry/SearchByCountry";
 import AccountInfo from "./Pages/Page/accountinfo/AccountInfo";
-import LoginPage from "./Pages/Page/loginpage/LoginPage";
+import Login from "./Pages/Page/login/Login";
 import CountryMeals from "./Pages/Page/countrymeals/CountryMeals";
 import RandomRecipe from "./Pages/Page/randomrecipe/RandomRecipe";
 import MealPlanner from "./Pages/Page/mealplanner/MealPlanner";
 import Article from "./Pages/Page/articlepage/Article";
-import Goals from "./Pages/Page/goals/Goals";
-import EditGoals from "./Pages/Page/editgoals/EditGoals";
-import NewGoal from "./Pages/Page/newgoal/NewGoal";
+import { useState } from "react";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/country" element={<SearchByCountry />} />
-          <Route path="/country/:country" element={<CountryMeals />} />
-          <Route path="/country/:country/:id" element={<RecipePage />} />
-          <Route path="/:categories" element={<CategoryPage />} />
+          <Route path="/" element={<HomePage isLoggedIn={isLoggedIn} />} />
+          <Route
+            path="/country"
+            element={<SearchByCountry isLoggedIn={isLoggedIn} />}
+          />
+          <Route
+            path="/country/:country"
+            element={<CountryMeals isLoggedIn={isLoggedIn} />}
+          />
+          <Route
+            path="/country/:country/:id"
+            element={<RecipePage isLoggedIn={isLoggedIn} />}
+          />
+          <Route
+            path="/:categories"
+            element={<CategoryPage isLoggedIn={isLoggedIn} />}
+          />
           <Route path=":categories/:id" element={<RecipePage />} />
-          <Route path="/random" element={<RandomRecipe />} />
-          <Route path="/planner" element={<MealPlanner />} />
-          <Route path="/signup" element={<SignUpPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/goals" element={<Goals />} />
-          <Route path="/goals/edit" element={<EditGoals />} />
-          <Route path="/goals/new" element={<NewGoal />} />
-          <Route path="/account" element={<AccountInfo />} />
-          <Route path="/article/:id" element={<Article />} />
+          <Route
+            path="/random"
+            element={<RandomRecipe isLoggedIn={isLoggedIn} />}
+          />
+          <Route
+            path="/planner"
+            element={<MealPlanner isLoggedIn={isLoggedIn} />}
+          />
+          <Route
+            path="/signup"
+            element={<SignUpPage />}
+            isLoggedIn={isLoggedIn}
+            setIsLoggedIn={setIsLoggedIn}
+          />
+          <Route
+            path="/login"
+            element={
+              <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+            }
+          />
+          <Route
+            path="/account"
+            element={<AccountInfo isLoggedIn={isLoggedIn} />}
+          />
+          <Route
+            path="/article/:id"
+            element={<Article isLoggedIn={isLoggedIn} />}
+          />
         </Routes>
       </BrowserRouter>
     </>
