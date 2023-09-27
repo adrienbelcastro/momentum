@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { nutritionDatabaseURL } from "../../../utils";
 import Loading from "../../../components/loading/Loading";
 
-function MealPlanner() {
+function MealPlanner(isLoggedIn) {
   const [planner, setPlanner] = useState();
 
   useEffect(() => {
@@ -59,7 +59,7 @@ function MealPlanner() {
 
     return (
       <>
-        <Header />
+        <Header isLoggedIn={isLoggedIn} />
         <section className="planner">
           <div className="planner__tracker">
             <h1 className="planner__total-calories">

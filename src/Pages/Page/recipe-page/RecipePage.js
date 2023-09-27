@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import RecipeDirections from "../../../components/recipes-individual/RecipeDirections";
 import Loading from "../../../components/loading/Loading";
 
-function RecipePage() {
+function RecipePage(isLoggedIn) {
   const [recipesData, setRecipesData] = useState();
   const recipeId = useParams();
 
@@ -27,7 +27,7 @@ function RecipePage() {
   } else {
     return (
       <>
-        <Header />
+        <Header isLoggedIn={isLoggedIn} />
         <RecipeDirections data={recipesData} />
         <Footer />
       </>

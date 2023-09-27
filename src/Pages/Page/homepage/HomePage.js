@@ -9,7 +9,7 @@ import ArticleList from "../../../components/articles/ArticleList";
 import "../homepage/HomePage.scss";
 import Loading from "../../../components/loading/Loading";
 
-function HomePage() {
+function HomePage({ isLoggedIn }) {
   const [categories, setCategories] = useState();
 
   useEffect(() => {
@@ -32,7 +32,7 @@ function HomePage() {
   } else {
     return (
       <>
-        <Header />
+        <Header isLoggedIn={isLoggedIn} />
         <Hero />
         <CategoryGrid categories={categories} />
         <ArticleList />
