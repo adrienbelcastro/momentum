@@ -19,8 +19,9 @@ const Login = ({ IsLoggedIn, setIsLoggedIn }) => {
     axios
       .post(`${nutritionDatabaseURL}login`, { username, password })
       .then((response) => {
-        const { token } = response.data;
         setIsLoggedIn(true);
+        const { token } = response.data;
+
         navigate("/");
       })
       .catch((error) => {
