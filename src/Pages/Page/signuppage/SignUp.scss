@@ -2,24 +2,34 @@
 @import "../../../styles/partials/variables.scss";
 
 .signup {
-  @include tablet {
-    background-image: url(../../../assets/images/signup-background.jpg);
-    background-size: 768px 800px;
-    background-repeat: no-repeat;
+  margin: 1rem;
 
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  @include tablet {
+    margin: 0;
+  }
+  @include tablet {
+    @include signup;
+    flex-direction: column;
+    padding: 0 3.5rem;
   }
   @include desktop {
-    background-image: url(../../../assets/images/signup-background.jpg);
-    background-size: 1280px 1200px;
-    background-repeat: no-repeat;
+    margin: 0;
+    flex-direction: column;
+    padding: 0 3.5rem;
+    @include signup;
+  }
 
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  &__container {
+    @include tablet {
+      background-color: $wheat;
+      width: 510px;
+      padding: 1rem 3.5rem;
+    }
+
+    @include desktop {
+      background-color: $wheat;
+      width: 510px;
+      padding: 0 3.5rem;
+    }
   }
 }
