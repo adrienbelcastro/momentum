@@ -2,9 +2,10 @@ import Sidebar from "./Sidebar";
 import { AvatarGenerator } from "random-avatar-generator";
 import logo from "../../assets/images/logo.png";
 import "./header.scss";
+import { RiAccountCircleFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
-const Header = (data) => {
+const Header = ({ isLoggedIn }) => {
   const generator = new AvatarGenerator();
   const profilePic = generator.generateRandomAvatar();
 
@@ -34,13 +35,28 @@ const Header = (data) => {
           </a>
         </ul>
         <ul className="header__nav">
-          <img className="header__profile" src={profilePic} alt="Profile"></img>
-          <Link to="/signup">
-            <button className="header__desktop-signup">Sign Up</button>
-          </Link>
-          <Link to="/login">
-            <button className="header__desktop-signup">Log In</button>
-          </Link>
+          {isLoggedIn ? (
+            <>
+              <span className="header__desktop-signup">Welcome, User!</span>
+              <Link to="/account">
+                <img
+                  className="header__profile"
+                  src={profilePic}
+                  alt="Profile"
+                ></img>
+              </Link>
+            </>
+          ) : (
+            <>
+              <RiAccountCircleFill className="header__mobile-authentication " />
+              <Link className="header__desktop-signup" to="/login">
+                Log In
+              </Link>
+              <Link className="header__desktop-signup" to="/signup">
+                Sign In
+              </Link>
+            </>
+          )}
         </ul>
       </div>
       <div className="header__sidebar">

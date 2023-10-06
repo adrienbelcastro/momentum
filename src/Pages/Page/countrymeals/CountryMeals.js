@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import RecipeList from "../../../components/recipesList/RecipesList";
 import Loading from "../../../components/loading/Loading";
 
-function CountryResults() {
+function CountryResults(isLoggedIn) {
   const [recipes, setRecipes] = useState();
   const country = useParams();
 
@@ -27,7 +27,7 @@ function CountryResults() {
   } else {
     return (
       <>
-        <Header />
+        <Header isLoggedIn={isLoggedIn} />
         <RecipeList data={recipes} />
         <Footer />
       </>

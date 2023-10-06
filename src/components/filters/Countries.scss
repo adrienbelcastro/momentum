@@ -5,10 +5,10 @@
   &__container {
     @include desktop {
       display: grid;
-      grid-template-columns: repeat(2, 500px);
+      grid-template-columns: repeat(2, 565px);
       column-gap: 2rem;
       margin: 2rem 3.8rem;
-      padding: 4rem;
+
       background-color: $white;
       box-shadow: $box-shadow;
     }
@@ -17,11 +17,11 @@
   &__flex {
     @include desktop {
       display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 4rem;
-      margin-left: 4rem;
     }
   }
+
   &__title {
     margin: 1rem;
     font-size: $mobile-page-header;

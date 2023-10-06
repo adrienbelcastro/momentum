@@ -5,10 +5,10 @@
   margin: 1rem;
 
   @include tablet {
-    margin: 1rem 3rem;
+    margin: 1rem 5rem;
   }
   @include desktop {
-    margin: 2rem 5rem;
+    margin: 2rem 12rem;
   }
 
   &__date-flex {
@@ -27,19 +27,14 @@
     box-shadow: $box-shadow;
   }
 
+  &__category-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__delete {
-    position: absolute;
     border: none;
     background: none;
-    right: 2rem;
-
-    @include tablet {
-      right: 4rem;
-    }
-
-    @include desktop {
-      right: 3rem;
-    }
   }
 
   &__total-calories {
@@ -48,12 +43,19 @@
   }
 
   &__container {
-    height: 100px;
     padding: 1rem;
     margin: 1rem 0;
     background-color: $off-white;
     border-radius: 10px;
     box-shadow: $box-shadow;
+
+    @include tablet {
+      padding: 1rem 3rem;
+    }
+
+    @include desktop {
+      padding: 1rem 4rem;
+    }
   }
 
   &__total-macros {

@@ -6,7 +6,7 @@ import Footer from "../../../components/footer/footer";
 import Countries from "../../../components/filters/Countries";
 import Loading from "../../../components/loading/Loading";
 
-function CountryResults() {
+function CountryResults(isLoggedIn) {
   const [country, setCountry] = useState();
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function CountryResults() {
   } else {
     return (
       <>
-        <Header />
+        <Header isLoggedIn={isLoggedIn} />
         <h1 className="countries__title">Search By Countries</h1>
         <Countries country={country} />
         <Footer />

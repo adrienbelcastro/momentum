@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 import RecipesList from "../../../components/recipesList/RecipesList";
 import "./CategoriesPage.scss";
 
-function CategoriesPage() {
+function CategoriesPage(isLoggedIn) {
   const [recipes, setRecipes] = useState();
 
   const categories = useParams();
@@ -29,7 +29,7 @@ function CategoriesPage() {
   } else {
     return (
       <>
-        <Header recipes={recipes} />
+        <Header recipes={recipes} isLoggedIn={isLoggedIn} />
         <section className="page">
           <h1 className="page__title">{categories.categories} Recipes</h1>
         </section>

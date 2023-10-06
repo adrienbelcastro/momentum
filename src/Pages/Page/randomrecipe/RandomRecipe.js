@@ -6,7 +6,7 @@ import Footer from "../../../components/footer/footer";
 import RecipeDirections from "../../../components/recipes-individual/RecipeDirections";
 import Loading from "../../../components/loading/Loading";
 
-function RandomRecipe() {
+function RandomRecipe(isLoggedIn) {
   const [randomRecipe, setRandomRecipe] = useState();
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function RandomRecipe() {
   } else {
     return (
       <>
-        <Header />
+        <Header isLoggedIn={isLoggedIn} />
         <RecipeDirections data={randomRecipe} />
         <Footer />
       </>
