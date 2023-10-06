@@ -5,7 +5,6 @@ import HomePage from "./Pages/Page/homepage/HomePage";
 import CategoryPage from "./Pages/Page/categorypage/CategoriesPage";
 import RecipePage from "./Pages/Page/recipe-page/RecipePage";
 import SearchByCountry from "./Pages/Page/filterbycountry/SearchByCountry";
-import AccountInfo from "./Pages/Page/accountinfo/AccountInfo";
 import Login from "./Pages/Page/login/Login";
 import CountryMeals from "./Pages/Page/countrymeals/CountryMeals";
 import RandomRecipe from "./Pages/Page/randomrecipe/RandomRecipe";
@@ -57,10 +56,7 @@ function App() {
               <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
             }
           />
-          <Route
-            path="/account"
-            element={<AccountInfo isLoggedIn={isLoggedIn} />}
-          />
+
           <Route
             path="/article/:id"
             element={<Article isLoggedIn={isLoggedIn} />}
