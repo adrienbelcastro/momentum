@@ -14,10 +14,17 @@
 
   &__video-overlay {
     background: rgba(0, 0, 0, 0.7);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     position: absolute;
     left: 0;
-    top: 5.6rem;
+    top: 5.7rem;
     width: 100%;
+
     min-height: 738px;
     max-height: 1136px;
     aspect-ratio: 10/9;
@@ -28,32 +35,26 @@
   }
 
   &__title {
-    position: absolute;
-    top: 8rem;
-    left: 3rem;
-
     font-size: 4rem;
     background: none;
     color: $wheat;
 
+    padding: 3rem;
+
     @include tablet {
-      top: 12rem;
-      left: 5rem;
       font-size: 7rem;
+      text-align: center;
     }
 
     @include desktop {
-      top: 16rem;
       font-size: 10rem;
-      left: 14rem;
+      text-align: center;
+      padding: 0 9rem;
+      padding-bottom: 7rem;
     }
   }
 
   &__cta {
-    position: relative;
-    bottom: 10rem;
-    left: 2.5rem;
-
     height: 36px;
     padding: 0 1rem;
 
@@ -62,16 +63,10 @@
     border: none;
 
     @include tablet {
-      bottom: 8rem;
-      left: 15.5rem;
-
       padding: 0 2rem;
     }
 
     @include desktop {
-      left: 26rem;
-      bottom: 15rem;
-
       padding: 0 4rem;
       height: 3rem;
     }

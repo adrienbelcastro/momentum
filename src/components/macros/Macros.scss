@@ -5,6 +5,15 @@
   background-color: $off-white;
   border-radius: 10px;
 
+  @include tablet {
+    width: 100%;
+  }
+
+  @include desktop {
+    max-width: 44rem;
+    width: 100%;
+  }
+
   &__disclaimer {
     padding-top: 1rem;
     padding-left: 1rem;

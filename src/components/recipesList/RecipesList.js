@@ -12,21 +12,18 @@ function RecipesList(data) {
   } else {
     return (
       <section className="recipe-list">
-        <Link to={`/country`}>
-          <div className="recipe-directions__back-arrow">
-            <AiOutlineArrowLeft className="arrow" />
+        <div className="recipe-list__flex">
+          <div className="recipe-list__container">
+            {recipeData.map((recipeData) => (
+              <Link to={`${recipeData.idMeal}`} key={recipeData.idMeal}>
+                <RecipeCard
+                  title={recipeData.strMeal}
+                  thumbnail={recipeData.strMealThumb}
+                  id={recipeData.idMeal}
+                />
+              </Link>
+            ))}
           </div>
-        </Link>
-        <div className="recipe-list__container">
-          {recipeData.map((recipeData) => (
-            <Link to={`${recipeData.idMeal}`} key={recipeData.idMeal}>
-              <RecipeCard
-                title={recipeData.strMeal}
-                thumbnail={recipeData.strMealThumb}
-                id={recipeData.idMeal}
-              />
-            </Link>
-          ))}
         </div>
       </section>
     );

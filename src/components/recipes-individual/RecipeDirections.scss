@@ -33,31 +33,54 @@
     }
   }
 
+  &__flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   &__thumbnail {
     width: 100%;
     margin-top: 2rem;
     box-shadow: $box-shadow;
+
+    @include desktop {
+      width: auto;
+    }
   }
 
   &__ingredients-container {
     display: flex;
     justify-content: space-evenly;
-    padding: 1rem;
-
+    width: 100%;
+    padding-top: 1rem;
     background-color: $off-white;
+
+    @include desktop {
+      max-width: 44rem;
+    }
   }
 
   &__ingredients-title {
+    width: 100%;
     margin-top: 2rem;
     padding-top: 1rem;
-    padding-left: 1rem;
-
+    text-align: center;
     background-color: $off-white;
     border-radius: 10px 10px 0 0;
+
+    @include desktop {
+      max-width: 44rem;
+    }
   }
 
   &__instructions-container {
     background-color: $off-white;
+
+    @include desktop {
+      max-width: 44rem;
+    }
   }
 
   &__instructions-title {

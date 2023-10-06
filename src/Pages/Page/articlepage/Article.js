@@ -6,10 +6,9 @@ import Loading from "../../../components/loading/Loading";
 import Footer from "../../../components/footer/footer";
 import Header from "../../../components/header/header";
 import { nutritionDatabaseURL } from "../../../utils";
-import { AiOutlineArrowLeft } from "react-icons/ai";
 import "../articlepage/Article.scss";
 
-export default function Article() {
+export default function Article(isLoggedIn) {
   const [articleData, setArticleData] = useState();
   const articleId = useParams();
 
@@ -30,13 +29,9 @@ export default function Article() {
     const content = articleData[0].content.split("\n");
     return (
       <div className="article">
-        <Header />
-        <div>
-          <Link to={`/`}>
-            <div>
-              <AiOutlineArrowLeft className="arrow" />
-            </div>
-          </Link>
+        <Header isLoggedIn={isLoggedIn} />
+
+        <div className="article__flex">
           <img
             className="article__photo"
             src={articleData[0].image}
