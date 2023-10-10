@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../assets/images/logo.png";
-import { elastic as Menu } from "react-burger-menu";
+import { stack as Menu } from "react-burger-menu";
 import "./Sidebar.scss";
 
 function Sidebar() {
