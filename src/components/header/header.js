@@ -1,6 +1,6 @@
 import Sidebar from "./Sidebar";
 import { AvatarGenerator } from "random-avatar-generator";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/logo.jpg";
 import "./header.scss";
 import { RiAccountCircleFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
