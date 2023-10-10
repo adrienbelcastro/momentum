@@ -1,6 +1,6 @@
 import Sidebar from "./Sidebar";
 import { AvatarGenerator } from "random-avatar-generator";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/logo.jpg";
 import "./header.scss";
 import { RiAccountCircleFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
@@ -14,14 +14,10 @@ const Header = ({ isLoggedIn }) => {
       <div className="header">
         <ul className="header__desktop-navbar">
           <Link to="/">
-            <img className="header__logo" src={logo} alt="Mobile Logo"></img>
+            <img className="header__logo" src={logo} alt="Logo"></img>
           </Link>
           <Link to="/">
-            <img
-              src={logo}
-              alt="desktop logo"
-              className="header__desktop-logo"
-            ></img>
+            <img src={logo} alt="Logo" className="header__desktop-logo"></img>
           </Link>
 
           <a href="/planner" className="header__desktop-ingredients">
