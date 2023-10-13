@@ -1,11 +1,7 @@
 import AccountForm from "../../../components/authenticationform/AuthenticationForm";
-import { redirect } from "react-router-dom";
 import "./SignUp.scss";
 
-export default function SignUpPage({ isLoggedIn, setIsLoggedIn }) {
-  if (isLoggedIn) {
-    return redirect("/");
-  }
+function SignUpPage({ setIsLoggedIn }) {
   return (
     <>
       <div className="signup">
@@ -18,3 +14,5 @@ export default function SignUpPage({ isLoggedIn, setIsLoggedIn }) {
     </>
   );
 }
+
+export default SignUpPage;
