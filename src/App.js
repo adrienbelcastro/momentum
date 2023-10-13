@@ -46,9 +46,7 @@ function App() {
           />
           <Route
             path="/signup"
-            element={<SignUpPage />}
-            isLoggedIn={isLoggedIn}
-            setIsLoggedIn={setIsLoggedIn}
+            element={<SignUpPage setIsLoggedIn={setIsLoggedIn} />}
           />
           <Route
             path="/login"

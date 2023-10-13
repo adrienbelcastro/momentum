@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { nutritionDatabaseURL } from "../../../utils";
 import Loading from "../../../components/loading/Loading";
 
-function MealPlanner(isLoggedIn) {
+function MealPlanner({ isLoggedIn }) {
   const [planner, setPlanner] = useState();
 
   useEffect(() => {

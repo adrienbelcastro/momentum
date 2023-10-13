@@ -6,7 +6,7 @@ import Footer from "../../../components/footer/footer";
 import Countries from "../../../components/filters/Countries";
 import Loading from "../../../components/loading/Loading";
 
-function CountryResults(isLoggedIn) {
+function CountryResults({ isLoggedIn }) {
   const [country, setCountry] = useState();
 
   useEffect(() => {

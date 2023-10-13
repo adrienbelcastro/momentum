@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import RecipeList from "../../../components/recipesList/RecipesList";
 import Loading from "../../../components/loading/Loading";
 
-function CountryResults(isLoggedIn) {
+function CountryResults({ isLoggedIn }) {
   const [recipes, setRecipes] = useState();
   const country = useParams();
 

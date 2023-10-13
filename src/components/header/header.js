@@ -6,6 +6,7 @@ import { RiAccountCircleFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 const Header = ({ isLoggedIn }) => {
+  console.log(isLoggedIn);
   const generator = new AvatarGenerator();
   const profilePic = generator.generateRandomAvatar();
 
