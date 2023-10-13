@@ -8,7 +8,7 @@ import Header from "../../../components/header/header";
 import { nutritionDatabaseURL } from "../../../utils";
 import "../articlepage/Article.scss";
 
-export default function Article(isLoggedIn) {
+export default function Article({ isLoggedIn }) {
   const [articleData, setArticleData] = useState();
   const articleId = useParams();
 

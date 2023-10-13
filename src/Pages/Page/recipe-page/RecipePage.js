@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import RecipeDirections from "../../../components/recipes-individual/RecipeDirections";
 import Loading from "../../../components/loading/Loading";
 
-function RecipePage(isLoggedIn) {
+function RecipePage({ isLoggedIn }) {
   const [recipesData, setRecipesData] = useState();
   const recipeId = useParams();
 
