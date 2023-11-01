@@ -28,5 +28,4 @@ export const nutritionApiUrl =
 export const nutritionApiKey =
   "&app_id=62f5ffa9&app_key=37a095815028f64f00a7e0f38f6c0c94";
 
-export const nutritionDatabaseURL =
-  "https://momentum-api-git-feature-bug-fix-adrienbelcastro.vercel.app/?vercelToolbarCode=Z4o7hUPeMh1a-Ni/";
+export const nutritionDatabaseURL = "https://momentum-api.vercel.app//";
