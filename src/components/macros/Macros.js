@@ -42,7 +42,7 @@ function Macros({ name }) {
     event.preventDefault();
 
     axios
-      .post(`${nutritionDatabaseURL}`, {
+      .post(`${nutritionDatabaseURL}meals`, {
         name: recipeName,
         meal_type: category,
         calories: nutrients.macros.calories,
