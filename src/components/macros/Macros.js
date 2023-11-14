@@ -52,7 +52,7 @@ function Macros({ name }) {
       })
       .then((result) => {
         console.log(result.status);
-        if (result.status === 204) {
+        if (result.status === 200) {
           toast("Recipe Added To Planner");
         }
       })
