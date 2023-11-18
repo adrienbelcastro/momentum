@@ -14,7 +14,7 @@ const Login = ({ IsLoggedIn, setIsLoggedIn }) => {
   const handleLogin = (event) => {
     event.preventDefault();
     if (IsLoggedIn) {
-      return <redirect to="/" />;
+      navigate("/");
     }
     axios
       .post(`${nutritionDatabaseURL}login`, { username, password })
@@ -25,6 +25,7 @@ const Login = ({ IsLoggedIn, setIsLoggedIn }) => {
         navigate("/");
       })
       .catch((error) => {
+        console.log(error);
         console.error("Authentication failed", error);
         toast("Authentication failed");
       });
@@ -50,7 +51,7 @@ const Login = ({ IsLoggedIn, setIsLoggedIn }) => {
               <label className="form__container">
                 <input
                   className="form__input"
-                  type="text"
+                  type="password"
                   name="Password"
                   placeholder="Password"
                   onChange={(e) => setPassword(e.target.value)}
