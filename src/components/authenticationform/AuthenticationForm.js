@@ -4,6 +4,7 @@ import axios from "axios";
 import { nutritionDatabaseURL } from "../../utils";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const SignUpForm = ({ setIsLoggedIn }) => {
   const [username, setUsername] = useState();
@@ -11,6 +12,7 @@ const SignUpForm = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState();
   const [phone, setPhone] = useState();
   const [error, setError] = useState();
+  const navigate = useNavigate();
 
   const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
   const phoneRegex = /^\d{10}$/;
@@ -35,6 +37,7 @@ const SignUpForm = ({ setIsLoggedIn }) => {
         .then((response) => {
           toast("Account Created");
           setIsLoggedIn(true);
+          navigate("/");
         })
         .catch((error) => {
           console.log(error);
