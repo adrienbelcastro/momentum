@@ -11,6 +11,8 @@ const Login = ({ IsLoggedIn, setIsLoggedIn }) => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  axios.defaults.withCredentials = true;
+
   const handleLogin = (event) => {
     event.preventDefault();
     if (IsLoggedIn) {
@@ -19,9 +21,9 @@ const Login = ({ IsLoggedIn, setIsLoggedIn }) => {
     axios
       .post(`${nutritionDatabaseURL}login`, { username, password })
       .then((response) => {
-        setIsLoggedIn(true);
         const { token } = response.data;
-
+        document.cookie = `accessToken=${token}; path=/;`;
+        setIsLoggedIn(true);
         navigate("/");
       })
       .catch((error) => {
