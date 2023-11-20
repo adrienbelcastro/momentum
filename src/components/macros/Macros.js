@@ -51,12 +51,11 @@ function Macros({ name }) {
         protein: nutrients.macros.protein,
       })
       .then((result) => {
-        if (result.status === 204) {
-          toast("Recipe Added To Planner");
-        }
+        toast.success("Recipe Added To Planner");
       })
       .catch((error) => {
         console.error(error);
+        toast.error("Failed to add recipe to planner");
       });
   };
 
