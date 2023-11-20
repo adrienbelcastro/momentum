@@ -13,7 +13,8 @@ import Article from "./Pages/Page/articlepage/Article";
 import { useState } from "react";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const initialLoggedInState = document.cookie.includes("accessToken=");
+  const [isLoggedIn, setIsLoggedIn] = useState(initialLoggedInState);
   return (
     <>
       <BrowserRouter>

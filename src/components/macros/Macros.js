@@ -42,7 +42,7 @@ function Macros({ name }) {
     event.preventDefault();
 
     axios
-      .post(`${nutritionDatabaseURL}`, {
+      .post(`${nutritionDatabaseURL}meals`, {
         name: recipeName,
         meal_type: category,
         calories: nutrients.macros.calories,
@@ -51,12 +51,11 @@ function Macros({ name }) {
         protein: nutrients.macros.protein,
       })
       .then((result) => {
-        if (result.status === 201) {
-          toast("Recipe Added To Planner");
-        }
+        toast.success("Recipe Added To Planner");
       })
       .catch((error) => {
         console.error(error);
+        toast.error("Failed to add recipe to planner");
       });
   };
 

@@ -34,13 +34,11 @@ const Header = ({ isLoggedIn }) => {
           {isLoggedIn ? (
             <>
               <span className="header__desktop-signup">Welcome, User!</span>
-              <Link to="/account">
-                <img
-                  className="header__profile"
-                  src={profilePic}
-                  alt="Profile"
-                ></img>
-              </Link>
+              <img
+                className="header__profile"
+                src={profilePic}
+                alt="Profile"
+              ></img>
             </>
           ) : (
             <>
