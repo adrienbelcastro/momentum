@@ -25,7 +25,6 @@ function MealPlanner({ isLoggedIn }) {
     axios
       .delete(`${nutritionDatabaseURL}meals/${recipeId}`)
       .then((result) => {
-        console.log(result);
         setPlanner((prevPlanner) =>
           prevPlanner.filter((meal) => meal.recipe_id !== recipeId)
         );
