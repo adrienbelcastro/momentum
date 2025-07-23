@@ -7,3 +7,5 @@ Username: test1
 Password: 12345
 
 You can create your own account if you so choose too
+
+Third Party APIs use free tier meaning that they have a finite number of calls. If you see a loading animation playing simply refresh the page and the api calls should work.
